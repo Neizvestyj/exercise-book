@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p id="p">Дан массив [1,2,3,4,5,6,7] с числами, кнопка и инпут. По нажатию на кнопку запишите в инпут все числа из массива, разделив их запятыми.
+</p>
+<p>Даны абзацы с текстом. Сделайте так, чтобы по нажатию на любой абзац его текст красился в красный цвет.</p>
+</div>
+</fieldset>
+
+<script>
+let paragraph=document.querySelectorAll("p");
+paragraph.forEach(paragraph=>{
+paragraph.addEventListener("click",e=>{
+e.target.classList.toggle("red");
+})
+})
+
+
+
+
+
+
+</script>
+  </body>
+</html>

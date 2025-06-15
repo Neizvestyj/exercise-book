@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">
+Сделайте функцию, которая параметром будет принимать английское существительное в единственном числе и возвращать его во множественном числе.</p>
+<hr>
+<div class="container" id="container">
+<input id="input" type="text">
+</div>
+<button class="btn" id="btn">Click</button>
+
+<p id="result"></p>
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+
+
+let input=document.getElementById("input");
+let result = document.getElementById("result");
+let inputVal=input.value.trim()
+result.innerHTML=inputVal+"s"
+input.value=""
+})
+
+</script>
+<style>
+
+td{
+width:40px;
+border:1px solid gray;
+}
+tr{
+height:30px;
+}
+table{
+border:1px solid gray;
+border-collapse:collapse;
+}
+.red{
+border:1px solid red;
+}
+.saveBtn{
+background-color:orange;
+}
+.hiden{
+display:none;
+}
+
+
+</style>
+  </body>
+</html>

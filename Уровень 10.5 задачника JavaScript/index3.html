@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">
+Дана таблица. По нажатию на кнопку заполните ее следующим образом:
+
+
+5	6	7	8	9
+4	5	6	7	8
+3	4	5	6	7
+2	3	4	5	6
+1	2	3	4	5
+</p>
+
+
+<hr>
+<p class="container"></p>
+<button class="btn" id="btn">Расчитать</button>
+<script>
+
+
+let arr=[];
+
+const container=document.querySelector('.container');
+let
+table=document.createElement("table");
+for(let i=5;i>0;i--){
+let tr=document.createElement("tr");
+for(let j=0;j<5;j++){
+let td=document.createElement("td");
+arr.push(td);
+td.innerHTML=i+j
+tr.appendChild(td);
+
+}
+table.appendChild(tr)
+}
+container.appendChild(table);
+
+
+
+
+
+</script>
+<style>
+td{
+width:40px;
+border:1px solid gray;
+}
+tr{
+height:30px;
+}
+table{
+border:1px solid gray;
+border-collapse:collapse;
+}
+.red{
+border:1px solid red;
+}
+.saveBtn{
+background-color:orange;
+}
+.hiden{
+display:none;
+}
+</style>
+  </body>
+</html>

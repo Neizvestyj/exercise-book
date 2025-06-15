@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Дан список событий за определенные месяцы, хранящийся в следующей структуре:
+
+let events = [
+	{
+		date:  '2019-12'
+		event: 'name1'
+	},
+	{
+		date:  '2019-12'
+		event: 'name2'
+	},
+	{
+		date:  '2019-11'
+		event: 'name3'
+	},
+	{
+		date:  '2019-11'
+		event: 'name4'
+	},
+	{
+		date:  '2020-10'
+		event: 'name5'
+	},
+	{
+		date:  '2020-10'
+		event: 'name6'
+	},
+	{
+		date:  '2020-11'
+		event: 'name5'
+	},
+	{
+		date:  '2020-11'
+		event: 'name6'
+	},
+	{
+		date:  '2020-12'
+		event: 'name7'
+	},
+	{
+		date:  '2020-12'
+		event: 'name8'
+	},
+	{
+		date:  '2020-12'
+		event: 'name9'
+	},
+]
+Напишите код, которой переделает структуру данных вот в такую:
+
+{
+	2019: {
+		11: [массив событий],
+		12: [массив событий],
+	}
+	2020: {
+		10: [массив событий],
+		11: [массив событий],
+		12: [массив событий],
+	}
+}</p>
+<hr>
+<div id="container">
+<button class="btn" id="btn">Click</button>
+</div>
+<p id="results"></p>
+<script>
+let results=document.getElementById("results")
+let events = [
+	{
+		date:  '2019-12',
+		event: 'name1'
+	},
+	{
+		date:  '2019-12',
+		event: 'name2'
+	},
+	{
+		date:  '2019-11',
+		event: 'name3'
+	},
+	{
+		date:  '2019-11',
+		event: 'name4'
+	},
+	{
+		date:  '2020-10',
+		event: 'name5'
+	},
+	{
+		date:  '2020-10',
+		event: 'name6'
+	},
+	{
+		date:  '2020-11',
+		event: 'name5'
+	},
+	{
+		date:  '2020-11',
+		event: 'name6'
+	},
+	{
+		date:  '2020-12',
+		event: 'name7'
+	},
+	{
+		date:  '2020-12',
+		event: 'name8'
+	},
+	{
+		date:  '2020-12',
+		event: 'name9'
+	},
+];
+document.getElementById("btn").addEventListener("click",()=>{
+let result={};
+
+events.forEach(item=>{
+const [year,month]=item.date.split("-")
+
+if(!result[year]){
+result[year]={};
+ }
+
+if(!result[year][month]){
+result[year][month]=[];
+}
+
+result[year][month].push(item.event);
+ 
+})
+results.innerHTML=JSON.stringify(result)
+})
+
+
+</script>
+<style>
+
+</style>
+  </body>
+</html>

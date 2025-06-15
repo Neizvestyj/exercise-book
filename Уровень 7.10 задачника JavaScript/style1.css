@@ -1,0 +1,134 @@
+td{
+width:128px; 
+height:43px; 
+background-color:green;
+}
+tr{
+background-color:black;
+
+}
+body {
+background-color: #333; /* Темно-серый фон по умолчанию */
+font-family:Arial,sans-serif;
+transition:background-color 0.5s ease;
+color:white;
+            }
+
+.btn{
+    width: 100%;
+    padding: 13px 5px;
+    background-color: #4CAF50; /* Начальный цвет */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Плавный переход цвета */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
+}
+.btn:hover {
+    background-color: #45a049; /* Цвет фона при наведении */
+}
+
+/* Эффект нажатия */
+.btn:active {
+    transform: scale(1); /* Уменьшение кнопки при нажатии */
+}
+
+
+
+
+
+
+
+
+
+.btnY {
+    padding: 10px 20px;
+    background-color: #FFC107; /* Желтый цвет */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s; /* Плавные переходы */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
+    margin-left: auto; /* Прижатие к правой стороне */
+}
+
+.btnY.completed {
+    background-color: #4CAF50; /* Зеленый цвет при завершении */
+}
+
+.btnDel {
+    padding: 10px 16px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 10px; /* Промежуток между кнопками */
+}
+
+.btnDel:active {
+    transform: scale(0.95);
+}
+
+#input {
+    width: 94%;
+    max-width: 400px;
+    padding: 10px;
+    border: 2px solid #3498db; /* Цвет рамки */
+    border-radius: 5px; /* Закругленные углы */
+    font-size: 16px; /* Размер шрифта */
+    color: #333; /* Цвет текста */
+    background-color: #f9f9f9; /* Цвет фона */
+    transition: border 0.3s, background-color 0.3s; /* Плавные изменения */
+border:none;
+}
+
+/* Стиль при получении фокуса */
+#input:focus {
+    border-color: #2980b9; /* Цвет рамки при фокусе */
+    background-color: #ffffff; /* Цвет фона при фокусе */
+    outline: none; /* Убираем обводку по умолчанию */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Тень при фокусе */
+}
+
+ul {
+    list-style-type: none; /* Убираем маркеры */
+    padding: 0; /* Убираем внутренние отступы */
+}
+
+li {
+    //display: flex;
+    //justify-content: space-between; /* Распределяем пространство между текстом и кнопками */
+    //align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+//color:white;
+
+}
+
+.complited {
+    text-decoration: line-through; /* Зачеркивание для завершенных задач */
+    color: gray; /* Цвет для завершенных задач */
+}
+
+h1 {
+    //text-align: start; /* Выравнивание заголовка по центру */
+//color:white;
+left:20px;
+}
+.display{
+display:none;
+}
+.line{
+text-decoration:line-through;
+}
+
+
+

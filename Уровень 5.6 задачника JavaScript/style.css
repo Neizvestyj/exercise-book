@@ -1,0 +1,11 @@
+.p{
+width:200px;
+height:200px;
+background-color:green;
+border:1px solid blue;
+
+}
+.active{
+width:400px;
+height:400px
+}

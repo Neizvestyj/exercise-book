@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Дан список каких-то данных за определенные даты, хранящийся в следующей структуре:
+
+let data = [
+	{
+		year:  2019,
+		month: 11,
+		day: 20,
+		data: ['массив с данными']
+	},
+	{
+		year:  2019,
+		month: 11,
+		day: 21,
+		data: ['массив с данными']
+	},
+	{
+		year:  2019,
+		month: 12,
+		day: 25,
+		data: ['массив с данными']
+	},
+	{
+		year:  2019,
+		month: 12,
+		day: 26,
+		data: ['массив с данными']
+	},
+	{
+		year:  2020,
+		month: 10,
+		day: 29,
+		data: ['массив с данными']
+	},
+	{
+		year:  2020,
+		month: 10,
+		day: 30,
+		data: ['массив с данными']
+	},
+	{
+		year:  2020,
+		month: 11,
+		day: 19,
+		data: ['массив с данными']
+	},
+	{
+		year:  2020,
+		month: 11,
+		day: 20,
+		data: ['массив с данными']
+	},
+}
+Напишите код, которой переделает структуру данных в структуру вида:
+
+{
+	год1: {
+		месяц1: {
+			день1: [массив данных],
+			день2: [массив данных],
+			день3: [массив данных],
+		}
+		месяц2: {
+			день1: [массив данных],
+			день2: [массив данных],
+			день3: [массив данных],
+		}
+	}
+	год2: {
+		месяц1: {
+			день1: [массив данных],
+			день2: [массив данных],
+			день3: [массив данных],
+		}
+		месяц2: {
+			день1: [массив данных],
+			день2: [массив данных],
+			день3: [массив данных],
+		}
+	}
+}</p>
+<hr>
+<br>
+<p id="result"></p>
+<script>
+let result=document.getElementById("result");
+let data = [
+	{
+		year:  2019,
+		month: 11,
+		day: 20,
+		data: ['массив с данными']
+	},
+	{
+		year:  2019,
+		month: 11,
+		day: 21,
+		data: ['массив с данными']
+	},
+	{
+		year:  2019,
+		month: 12,
+		day: 25,
+		data: ['массив с данными']
+	},
+	{
+		year:  2019,
+		month: 12,
+		day: 26,
+		data: ['массив с данными']
+	},
+	{
+		year:  2020,
+		month: 10,
+		day: 29,
+		data: ['массив с данными']
+	},
+	{
+		year:  2020,
+		month: 10,
+		day: 30,
+		data: ['массив с данными']
+	},
+	{
+		year:  2020,
+		month: 11,
+		day: 19,
+		data: ['массив с данными']
+	},
+	{
+		year:  2020,
+		month: 11,
+		day: 20,
+		data: ['массив с данными']
+	},
+];
+let transformData={};
+
+data.forEach(empty=>{
+let {year,month,day,data}=empty;
+
+if(!transformData[year]){
+transformData[year]={};
+}
+
+if(!transformData[year][month]){
+transformData[year][month]={};
+}
+
+transformData[year][month][day]=data
+})
+result.textContent=JSON.stringify(transformData,null,2)
+
+</script>
+<style>
+</style>
+  </body>
+</html>

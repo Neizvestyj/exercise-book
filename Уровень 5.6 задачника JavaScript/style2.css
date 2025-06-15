@@ -1,0 +1,24 @@
+ .tooltip {
+       position: relative;
+       cursor: pointer;
+   }
+
+   .tooltip::after {
+       content: attr(data-info); /* Используем атрибут data-info */
+       position: absolute;
+       bottom: 125%; /* Позиционирование */
+       left: 50%;
+       transform: translateX(-50%);
+       background-color: #333;
+       color: #fff;
+       padding: 5px;
+       border-radius: 4px;
+       white-space: nowrap;
+       opacity: 0; /* Скрываем по умолчанию */
+       transition: opacity 0.3s; /* Плавный переход для появления */
+       pointer-events: none; /* Не активировать события курсора */
+   }
+
+   .tooltip:hover::after {
+       opacity: 1; /* Показать при наведении */
+   }

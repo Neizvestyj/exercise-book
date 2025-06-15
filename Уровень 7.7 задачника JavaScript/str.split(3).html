@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Дан массив с числами [1,2,3,33,345]. Подсчитайте общее количество цифр 3 во всех числах данного массива.</p>
+
+<button type="button" class="btn" id="btn">Click</button>
+<p id="ul"></p>
+<script>
+let arr=[1,2,3,33,345]
+let count =0;
+let p=document.getElementById("ul")
+document.getElementById("btn").addEventListener("click",()=>{
+
+arr.forEach(item=>{
+let str=String(item);
+count+=str.split("3").length-1
+
+
+}
+)
+p.textContent=`Число 3 встречется в массиве ${count} раза `
+
+
+
+})
+
+</script>
+  </body>
+</html>

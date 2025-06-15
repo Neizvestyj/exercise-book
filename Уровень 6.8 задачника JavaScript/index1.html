@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style2.css">    
+  </head>
+  <body>
+<style>
+
+.invize{
+display:none;
+}
+</style>
+<div></div>
+<fieldset>
+<p class="invize"  id="p">Дан див и кнопка. По первому клику на кнопку покажите див, а по второму клику - спрячьте.</p>
+
+<button type="button" class="btn" id="btn">Click</button>
+</fieldset>
+
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+document.getElementById("p").classList.toggle("invize")
+})
+
+</script>
+  </body>
+</html>

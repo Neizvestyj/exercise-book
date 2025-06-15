@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Дан текстареа. Как известно, его размер можно менять, потянув за уголок. Сделайте так, чтобы можно было изменить размер этого текстареа, а затем обновить страницу - и изменения не должны пропасть.</p>
+<hr>
+<div class="container" id="container">
+<textarea style="width:100px; height:50px;"></textarea>
+<div>
+<div id="result"> </div>
+
+<script>
+let result=document.getElementById("result");
+let textarea=document.querySelector("textarea");
+
+const savedSize=JSON.parse(localStorage.getItem("textareaSize"))
+if(savedSize){
+textarea.style.width=savedSize.width
+textarea.style.height=savedSize.height
+}
+
+textarea.addEventListener("mouseup",()=>{
+const width=textarea.style.width;
+const height=textarea.style.height;
+
+localStorage.setItem("textareaSize",JSON.stringify({width,height
+}))
+})
+
+</script>
+<style>
+textarea{
+resize:both;
+height:150px;
+}
+</style>
+
+  </body>
+</html>

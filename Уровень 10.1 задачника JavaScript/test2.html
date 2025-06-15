@@ -1,0 +1,53 @@
+
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="p">
+      Сделайте так, чтобы при клике или касании на любое место окна браузера в месте касания появлялся порядковый номер этого касания.
+    </p>
+    
+    <div class="container" id="container"></div>
+    <p id="result"></p>
+    <script>
+      let n = 0;
+
+      // Обработка кликов мыши
+      document.body.addEventListener("click", (event) => {
+        createNumber(event.pageX, event.pageY);
+      });
+
+      // Обработка касаний
+      document.body.addEventListener("touchstart", (event) => {
+        // Получаем координаты касания
+        const touch = event.touches[0];
+        createNumber(touch.pageX, touch.pageY);
+        // Предотвращаем прокрутку страницы при касании
+        event.preventDefault();
+      }, {passive: false});
+
+      function createNumber(x, y) {
+        n++;
+        let div = document.createElement('div');
+        div.textContent = n;
+        div.style.position = "absolute";
+        div.style.left = x + "px";
+        div.style.top = y + "px";
+        div.style.backgroundColor = "white";
+        div.style.border = "1px solid black";
+        div.style.padding = "2px 5px";
+        div.style.fontSize = "14px";
+        document.body.appendChild(div);
+      }
+    </script>
+  </body>
+</html>

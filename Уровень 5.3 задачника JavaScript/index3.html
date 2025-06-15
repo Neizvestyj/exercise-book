@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p>Дана кнопка и инпут. В инпут вводится число. По нажатию на кнопку найдите сумму цифр введеного числа.</p>
+<div id="place">
+<label>число 1</label>
+<input type="text" id="name1">
+</div>
+
+<button type="button" class="btn" id="btn">Расчитать</button>
+<div id="result"></div>
+
+</div>
+</fieldset>
+
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+const inputName1=document.getElementById("name1").value;
+const n=inputName1.split("").reduce((prev,curr)=>parseInt(prev)+parseInt(curr))
+
+
+let text=document.getElementById("result");
+text.textContent="Результат" + " "+n})
+
+
+
+
+</script>
+  </body>
+</html>

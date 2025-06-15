@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+
+
+<p id="p">Даны дивы с названиями продуктов и ценами. Дан также абзац. Сделайте так, чтобы кликами можно было выбрать несколько продуктов и их суммарная стоимость при этом писалась бы в абзац.
+</p>
+<hr>
+<p id="sumPrice">Стоимость </p>
+<div>Молоко <span>60</span>р</div>
+<div>Хлеб <span>70</span>р</div>
+<div>Творог <span>80</span>р</div>
+<div>Чай <span>90</span>р</div>
+<div>Фарш <span>100</span>р</div>
+<ul id="result">Ваш товар </ul>
+
+
+<script>
+let result=document.getElementById("result")
+let sumPrice=document.getElementById("sumPrice")
+let arr=[]
+let sum=0
+
+let divs=document.querySelectorAll("div")
+divs.forEach(item=>{
+
+item.addEventListener("click",(event)=>{
+let price=parseInt(item.querySelector("span").innerHTML)
+let text=item.innerHTML
+
+arr.push({text:text,price:price});
+
+let n=arr.map(item=>item.price);
+
+sum=n.reduce((prev,curr)=>prev+curr);
+
+sumPrice.innerHTML= "Стоимость покупок "  +sum
+result.innerHTML+=" <li>"+text+" " +"</li>"
+})
+})
+
+
+
+
+
+</script>
+<style>
+div{
+padding:20px;
+border:1px solid red;
+}
+body{
+display:flex;
+flex-direction:column;
+align-items:flex-center;
+}
+#sumPrice{
+margin-left:auto;
+}
+
+</style>
+  </body>
+</html>

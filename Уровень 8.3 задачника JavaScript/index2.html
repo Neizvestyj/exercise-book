@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Дан следующий массив:
+
+let arr = [1, 2, 3, 4, 5, 6];
+Дано также число:
+
+let num = 3;
+Добавьте в приведенный массив столько пустых строк, чтобы длина массива стала равна квадрату числа из переменной.</p>
+<hr>
+<button type="button" class="btn" id="btn">Click</button>
+<ul id="ul"></ul>
+<script>
+
+let arr = [1, 2, 3, 4, 5, 6];
+let num = 3;
+let ul=document.getElementById("ul");
+document.getElementById("btn").addEventListener("click",()=>{
+for(let i=0;i<num;i++){
+arr.push("")
+ }
+
+if(arr.length==(num*3)){
+alert(arr.length)
+}
+})
+
+
+
+
+
+
+</script>
+<style>
+.container{
+display:flex;
+flex-direction:column;
+gap:10px;
+
+
+}
+.item{
+display:flex;
+align-items:center;
+}
+input[type="checkbox"]{
+margin-right:10px;
+}
+</style>
+  </body>
+</html>

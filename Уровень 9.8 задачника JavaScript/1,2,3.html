@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Дана таблица. Сделайте так, чтобы при кликах на любую яейку таблицы в нее по очереди вставлялись числа 1, 2 и 3.</p>
+<hr>
+<div class="container" id="container">
+
+<table>
+ <thead>
+  <tr>
+<th onclick="sortTable(0)">Имя</th>
+<th onclick="sortTable(1)">Возраст</th>
+<th onclick="sortTable(2)">Город</th>
+  </tr>
+ </thead>
+
+ <tbody>
+  <tr>
+<td></td>
+<td></td>
+<td></td>
+  </tr>
+  <tr>
+<td></td>
+<td></td>
+<td></td>
+  </tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+  </tr>
+
+ </tbody>
+</table>
+</div>
+<script>
+
+const table=document.querySelector("table tbody");
+const cells=table.querySelectorAll("td")
+
+cells.forEach(cell=>{
+cell.addEventListener("click",(event)=>{
+event.target.innerHTML=+event.target.innerHTML+1
+
+})
+})
+
+
+
+</script>
+
+
+
+
+
+
+<style>
+
+td{
+width:100px;
+border:1px solid gray;
+}
+tr{
+height:30px;
+}
+table{
+border:1px solid gray;
+border-collapse:collapse;
+}
+.red{
+border:1px solid red;
+}
+.saveBtn{
+background-color:orange;
+}
+.hiden{
+display:none;
+}
+
+
+</style>
+  </body>
+</html>

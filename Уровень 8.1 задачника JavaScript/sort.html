@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Дан массив:
+
+[
+	[1, 2, 3],
+	[1, 2],
+	[1, 2, 3, 4, 5],
+	[1],
+	[1, 2, 3, 4],
+]
+Отсортируйте элементы массива по возрастанию количества элементов в подмассиве.
+
+</p>
+</div>
+
+<button class="btn" id="btn">Click</button>
+
+<div id="result"></div>
+
+<script>
+
+let result=document.getElementById("result")
+ document.getElementById("btn").addEventListener("click",()=>{
+let arr=[
+	[1, 2, 3],
+	[1, 2],
+	[1, 2, 3, 4, 5],
+	[1],
+	[1, 2, 3, 4],
+];
+
+arr.sort((a,b)=>a.length-b.length)
+result.innerHTML=JSON.stringify(arr)
+})
+
+
+
+
+
+
+
+</script>
+  </body>
+</html>

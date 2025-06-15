@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">
+Дана таблица. Юзер кликает по очереди на две ячейки, выделяя их. Сделайте так, чтобы красным цветом выделились все ячейки, расположенные по порядку между теми, на которые кликнул юзер.</p>
+<hr>
+<div class="container" id="container">
+</div>
+<button class="btn" id="btn">Click</button>
+
+<p id="result"></p>
+<script>
+let arr=[];
+let free=[]
+
+const container=document.querySelector('.container');
+let
+table=document.createElement("table");
+
+for(let i=0;i<=8;i++){
+let tr=document.createElement("tr");
+
+for(let j=0;j<=8;j++){
+let td=document.createElement("td");
+arr.push(td)
+
+
+td.addEventListener("click",()=>{
+
+if(free.length>=2){
+reset()
+}
+td.style.backgroundColor="blue";
+free.push(td)
+
+
+if(free.length>=2){ 
+
+const startIndex=arr.indexOf(free[0]);
+const endIndex=arr.indexOf(free[1])
+const [minIndex,maxIndex]=[Math.min(startIndex,endIndex),Math.max(startIndex,endIndex)]
+for(let k=minIndex;k<=maxIndex;k++){
+arr[k].style.backgroundColor="red";
+}
+}
+})
+
+
+tr.appendChild(td);
+}
+table.appendChild(tr)
+}
+container.appendChild(table);
+
+function reset(){
+free.forEach(cell=>{
+cell.style.backgroundColor="";
+})
+free=[]
+}
+</script>
+<style>
+
+td{
+width:40px;
+border:1px solid gray;
+}
+tr{
+height:30px;
+}
+table{
+border:1px solid gray;
+border-collapse:collapse;
+}
+.red{
+border:1px solid red;
+}
+.saveBtn{
+background-color:orange;
+}
+.hiden{
+display:none;
+}
+
+
+</style>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif; /* Шрифт для всего тела */
+    background-color: #161616; /* Цвет фона */
+    margin: 0; /* Убираем отступы */
+    padding: 20px; /* Добавляем отступы внутри тела */
+}
+
+#container {
+    background-color: white; /* Фон контейнера */
+    border-radius: 5px; /* Скругленные углы */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень для контейнера */
+    padding: 20px; /* Внутренние отступы */
+    margin: 0 auto; /* Центрируем контейнер */
+    max-width: 400px; /* Максимальная ширина контейнера */
+}
+
+select {
+    width: 100%; /* Ширина селекта на 100% */
+    padding: 10px; /* Отступы внутри селекта */
+    margin: 10px 0; /* Отступы сверху и снизу */
+    border: 1px solid #ccc; /* Граница селекта */
+    border-radius: 4px; /* Скругленные углы */
+    font-size: 16px; /*Размер шрифта*/
+    transition: border-color 0.3s; /* Плавный переход для цвета границы */
+}
+
+select:focus {
+    border-color: #0066cc; /* Цвет границы при фокусировке */
+    outline: none; /* Убираем стандартный контур */
+}
+
+ul {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы */
+    margin-top: 20px; /* Отступы сверху */
+}
+
+li {
+    background-color: #e7f3fe; /* Цвет фона элемента списка */
+    border-left: 5px solid #2196F3; /* Левая граница */
+    padding: 10px; /* Внутренние отступы элемента списка */
+    margin-bottom: 10px; /* Отступы снизу */
+    border-radius: 4px; /* Скругленные углы */
+}
+
+h2 {
+    color: #333; /* Цвет заголовка */
+}
+
+p {
+    color: white; /* Цвет параграфа */
+}

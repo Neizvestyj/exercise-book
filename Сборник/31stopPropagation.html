@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="select.css">    
+  </head>
+  <body>
+<p id="p">Дан див. У этого дива есть крестик закрытия. Сделайте так, чтобы по клику на крестик, либо на любое место страницы вне дива, этот див прятался.
+</p>
+<hr>
+<div id="container">
+<span class="close-btn">❌</span>
+</div>
+
+
+<script>
+let container=document.getElementById("container");
+let closeBtn=document.querySelector(".close-btn");
+
+closeBtn.addEventListener("click",(event)=>{
+container.classList.add("hidden")
+event.stopPropagation()
+})
+
+
+document.addEventListener("click",(event)=>{
+if(!container.contains(event.target)){
+container.classList.toggle("hidden")
+}
+})
+
+
+
+
+</script>
+<style>
+body{
+background-color:blue;
+}
+#container{
+border:2px solid blue;
+width:400px;
+height:100px;
+
+background-color:orange;
+position:relative;
+}
+.close-btn{
+position:absolute;
+top:5px;
+right:5px;
+cursor:pointer;
+}
+
+</style>
+  </body>
+</html>

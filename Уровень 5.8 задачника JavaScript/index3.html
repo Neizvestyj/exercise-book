@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p>Дан инпут и абзац. В него через запятую вводятся числа. По потери фокуса найдите сумму введенных чисел и выведите ее в абзац.</p>
+
+<div id="place">
+<label>число 1</label>
+<input type="text" id="name1">
+</div>
+
+<button type="button" class="btn" id="btn">Расчитать</button>
+
+<div id="result"></div>
+
+</div>
+</fieldset>
+
+<script>
+document.getElementById("name1").
+addEventListener("blur",()=>{
+
+let input=document.getElementById("name1"). value;
+let numbers=input.split(",").map(Number).filter(n=>!isNaN(n));
+alert(numbers)
+if(numbers.length>0){
+ let sum=numbers.reduce((prev,curr)=> prev+curr,0);
+
+document.getElementById("result").innerText=sum;
+}else{document.getElementById("result").innerText="errors"}
+})
+
+
+
+
+
+</script>
+  </body>
+</html>

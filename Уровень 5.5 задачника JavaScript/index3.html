@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p>Дан инпут, абзац и кнопка. В инпут вводится строка. По нажатию на кнопку выведите в абзац последний символ введенной строки.</p>
+<div id="place">
+<label>число 1</label>
+<input type="text" id="name1">
+</div>
+
+<button type="button" class="btn" id="btn">Расчитать</button>
+<div id="result"></div>
+
+</div>
+</fieldset>
+
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+const inputName1=document.getElementById("name1").value
+let n=inputName1.charAt(inputName1.length-1)
+
+
+let text=document.getElementById("result");
+text.textContent="Результат"+" " +n}) 
+
+
+
+
+</script>
+  </body>
+</html>

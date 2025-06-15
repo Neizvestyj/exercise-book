@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Сделайте инпут, в который можно ввести только числа. Остальные символы не должны вводится в инпут.</p>
+<hr>
+<div class="container" id="container">
+<input type="number" class="input" id="input">
+<div>
+<div id="result"> </div>
+</div>
+<script>
+let input=document.querySelector("#input");
+input.addEventListener("input",()=>{
+let inputVal=input.value.replace(/[^0-9]/g,"");
+input.value=inputVal
+})
+
+</script>
+<style>
+textarea{
+resize:both;
+height:150px;
+}
+</style>
+
+  </body>
+</html>

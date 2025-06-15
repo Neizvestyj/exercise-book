@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">
+Дана строка, содержащая два числа и математическую операцию между ними:
+
+'10 + 20'
+Напишите код, который вычислит результат записанной математической операции.</p>
+
+
+<hr>
+<p id="result"></p>
+<button class="btn" id="btn">Расчитать</button>
+<script>
+let number='10 + 20';
+let result = document.getElementById("result");
+
+document.getElementById("btn").addEventListener("click",()=>{
+
+result.innerHTML=parseInt(number.slice(0,2))+parseInt(number.slice(4,7))
+
+alert(eval(number))
+
+
+})
+</script>
+<style>
+
+</style>
+  </body>
+</html>

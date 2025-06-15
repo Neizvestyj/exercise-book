@@ -1,0 +1,29 @@
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Возведение в квадрат</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <fieldset>
+        <div id="place">
+            <p id="p">Дан абзац с числом 2 и кнопка. По нажатию на кнопку возведите текст абзаца в квадрат.</p>
+            <p id="p2">Даны абзацы с числами.<br>4<br>Сделайте так, чтобы по клику на любой абзац его значение возводилось в квадрат.</p>
+        </div>
+    </fieldset>
+
+    <script>
+        const place = document.getElementById('place');
+        place.addEventListener('click', (e) => {
+            if (e.target && e.target.nodeName === 'P') {
+                let number = parseInt(e.target.textContent.match(/\d+/)[0]);
+                e.target.textContent = `${number} ** 2 = ${number * number}`;
+            }
+        });
+    </script>
+</body>
+</html>
+```

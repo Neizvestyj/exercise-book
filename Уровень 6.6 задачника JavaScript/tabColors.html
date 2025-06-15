@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style2.css">    
+  </head>
+  <body>
+<style>
+body{
+background-color:black;
+}
+</style>
+
+
+<div></div>
+
+
+
+
+
+<script>
+
+let tr;
+let td;
+let 
+table=document.createElement("table");
+for(let i=0;i<8;i++){
+tr=document.createElement("tr");
+table.appendChild(tr);
+for(let j=0;j<8;j++){
+td=document.createElement("td");
+tr.appendChild(td)
+td.style.border="1px solid gray"
+td.addEventListener("click",(e)=>{
+
+colored(event)
+})
+}
+}
+document.getElementsByTagName("div")[0].append(table);
+table.style.border="1px solid gray"
+
+function colored(e){
+let colors=["blue","green","red","yellow","purple"];
+let randomIndex=Math.floor(Math.random()*colors.length);
+let randomColor=colors[randomIndex];
+e.target.style.backgroundColor=randomColor
+
+}
+
+//colored()
+
+
+</script>
+  </body>
+</html>

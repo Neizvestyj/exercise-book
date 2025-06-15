@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style2.css">    
+  </head>
+  <body>
+<fieldset>
+<p>Дана кнопка, инпут и список ul, В инпут вводится текст. По клику на кнопку добавьте в список новую li с этим текстом, но только если этот текст больше текста последнего тега li из списка.
+</p>
+
+<p id="error"></p>
+<div id="place">
+<label>число 1</label>
+<input type="text" id="input">
+</div>
+
+<button type="button" class="btn" id="btn">Click</button>
+
+<div><ul id="ul">
+
+
+</ul></div>
+
+</div>
+</fieldset>
+
+<script>
+
+
+let arr=[]
+let error=document.getElementById("error");
+
+let ul=document.getElementById("ul");
+
+document.getElementById("btn").addEventListener("click",()=>{
+let input=document.getElementById("input")
+
+let inputValue=input.value.replace(/\s+/g,'');
+
+
+if(arr.length<inputValue.length){
+let 
+li=document.createElement("li");
+li.textContent=input.value;
+ul.appendChild(li);
+arr.push(inputValue)
+input.value="";
+error.textContent=""
+}else{
+error.textContent="короткое слово"
+input.value="";
+
+}
+
+
+})
+
+
+
+
+
+</script>
+  </body>
+</html>

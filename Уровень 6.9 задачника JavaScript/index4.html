@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style2.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p id="p">Дан массив [1,2,3,4,5,6,7] с числами, кнопка и инпут. По нажатию на кнопку запишите в инпут все числа из массива, разделив их запятыми.
+</p>
+<p>Дана кнопка, пустой список ul и массив. По клику на кнопку заполните список элементами этого массива.</p>
+<p>Дана кнопка и пустой список ul. По клику на кнопку добавьте в конец списка новый пункт с текстом '!'.</p>
+<p>Дана кнопка и пустой список ul. По клику на кнопку добавьте в конец списка новый пункт с порядковым номером.
+</p>
+<div id="place">
+<label>число 1</label>
+<input type="text" id="name1">
+</div>
+
+<button type="button" class="btn" id="btn">Click</button>
+
+<div><ul id="ul">
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>4</li>
+<li>5</li>
+<li>6</li>
+<li>7</li>
+</ul></div>
+
+</div>
+</fieldset>
+
+<script>
+let currentNumber=8;
+document.getElementById("btn").addEventListener("click",()=>{
+let ul=document.getElementById("ul");
+let 
+li=document.createElement("li")
+li.innerHTML=currentNumber;
+ul.appendChild(li)
+currentNumber++
+
+})
+
+
+
+
+
+</script>
+  </body>
+</html>

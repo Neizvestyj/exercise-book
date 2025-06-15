@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Дан список ul и кнопка. По нажатию на кнопку перемешайте пункты списка в случайном порядке.
+</p>
+<hr>
+<div id="container">
+<ul id="ul">
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>4</li>
+<li>5</li>
+</ul>
+</div>
+<button class="btn" id="btn">Click</button>
+<p id="result"></p>
+<script>
+let ul=document.getElementById("ul");
+
+
+document.getElementById("btn").addEventListener("click",()=>{
+
+let li=ul.querySelectorAll("li")
+let randomIndex=Math.floor(Math.random()*li.length);
+let randomIndexTo=Math.floor(Math.random()*li.length);
+
+del(randomIndex,randomIndexTo)
+})
+
+function del(index,index2){
+let removeItem=ul.children[index]
+ul.removeChild(removeItem)
+
+ul.insertBefore(removeItem,ul.children[index2])
+}
+
+</script>
+<style>
+
+</style>
+  </body>
+</html>

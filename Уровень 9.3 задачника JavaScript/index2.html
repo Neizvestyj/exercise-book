@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Пусть у нас есть дата 22.02.2017. В этой дате 4 двойки. Найдите все даты с 4-мя двойками в текущем столетии.
+</p>
+<hr>
+<div id="container">
+
+<ul id="ul">
+</ul>
+</div>
+<button class="btn" id="btn">Click</button>
+<p id="result"></p>
+<script>
+let ul=document.getElementById("ul");
+document.getElementById("btn").addEventListener("click",()=>{
+
+for(let years=2000;years<2025;years++){
+for(let month=0;month<12;month++){
+
+let daysinMonth=new Date(years,month+1,0).getDate();
+
+for(let day=1;day<=daysinMonth;day++){
+let date=new Date(years,month,day);
+search(date)
+}
+}
+}
+})
+
+function search(date){
+let n=date.toString().split("2").length-1;
+if(n===4){
+let li=document.createElement("li")
+li.innerHTML=date.toLocaleDateString();
+ul.append(li)
+}
+}
+</script>
+<style>
+
+</style>
+  </body>
+</html>

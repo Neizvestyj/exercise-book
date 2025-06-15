@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!-- Убедитесь, что этот файл существует -->
+</head>
+<body>
+
+<fieldset>
+    <div id="place">
+        <label>число 1</label>
+        <input type="number" id="name1">
+    </div>
+
+    <div>
+        <label>число 2</label>
+        <input type="number" id="name2">
+    </div>
+
+    <button type="button" class="btn" id="btn">Расчитать</button>
+    <p id="result">Результат</p>
+</fieldset>
+
+<script>
+    document.getElementById("btn")?.addEventListener("click", () => {
+        const inputName1 = document.getElementById("name1") as HTMLInputElement | null;
+        const inputName2 = document.getElementById("name2") as HTMLInputElement | null;
+
+        if (inputName1 && inputName2) {
+            const inputValue1 = +inputName1.value;
+            const inputValue2 = +inputName2.value;
+            const result = document.getElementById("result") as HTMLParagraphElement | null;
+
+            let results = inputValue1 + inputValue2;
+
+            // Выводим результат
+            if (result) {
+                result.innerHTML = "Результат: " + results + "<br>";
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
+

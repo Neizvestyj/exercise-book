@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Дана кнопка и ul. По клику на кнопку выведите список всех возможных счастливых билетов. Билет представляет собой строку из шести цифр, может быть с нулями спереди. Билет считается счастливым, если сумма сумма первых трех цифр равна сумме вторых трех цифр.</p>
+
+<button type="button" class="btn" id="btn">Click</button>
+<ul id="ul"></ul>
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+let n=999999
+let ul=document.getElementById("ul");
+
+for(let i=999999;i>100000;i-=1){
+
+let arr=String(n)
+
+if(arr.length%2!==0){
+arr="0"+arr;
+}
+
+let path=Math.floor(arr.length/2)
+
+
+let left=arr.slice(0,path).split("").map(Number).reduce((prev,curr)=>prev+curr)
+let right=arr.slice(path).split("").map(Number).reduce((prev,curr)=>prev+curr)
+
+
+if(left===right){
+let li=document.createElement("li")
+li.innerHTML=n 
+ul.append(li)
+}
+n-=1
+
+}
+
+})
+
+</script>
+  </body>
+</html>

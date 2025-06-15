@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Пусть даны чекбоксы, отмеченные и нет. По нажатию на кнопку сделайте так, чтобы все чекбоксы сменили свое состояние.</p>
+<hr>
+<div id="container">
+<div class="item"><input type="checkbox" value="true"><p>Java Script</p>
+</div>
+
+<div class="item"><input type="checkbox"  value="true">
+<p>Python</p>
+</div>
+<div class="item"><input type="checkbox" value="true">
+<p>Java</p>
+</div>
+
+</div>
+
+
+<button type="button" class="btn" id="btn">Click</button>
+<ul id="ul"></ul>
+<script>
+
+document.getElementById("btn").addEventListener("click",()=>{
+let container=document.getElementById("container")
+let checks=container.querySelectorAll("input[type='checkbox']");
+
+checks.forEach(item=>{
+item.checked=!item.checked
+})
+
+
+
+})
+
+
+
+
+
+
+</script>
+<style>
+.container{
+display:flex;
+flex-direction:column;
+gap:10px;
+
+
+}
+.item{
+display:flex;
+align-items:center;
+}
+input[type="checkbox"]{
+margin-right:10px;
+}
+</style>
+  </body>
+</html>

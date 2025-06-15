@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p>Дан инпут и кнопка. По нажатию на кнопку выведите в инпут случайное число из диапазона от 1 до 100.
+</p>
+<div id="place">
+<label>число 1</label>
+<input type="text" id="name1">
+</div>
+
+<button type="button" class="btn" id="btn">Расчитать</button>
+<div id="result"></div>
+
+</div>
+</fieldset>
+
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+const year=document.getElementById("name1")
+let random=Math.floor(Math.random()*100)
+
+let text=document.getElementById("result");
+year.value=random
+
+
+
+
+
+}) 
+
+
+
+
+</script>
+  </body>
+</html>

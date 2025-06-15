@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+
+<p id="p">Дан массив, [1,2,3,4,5,6,7,8,9] кнопка и инпут. Сделайте так, чтобы по клику на кнопку в инпут выводился случайный элемент массива.
+</p>
+
+<div id="place">
+<label>число 1</label>
+<input type="text" id="name1">
+</div>
+
+<button type="button" class="btn" id="btn">Расчитать</button>
+
+<div id="result"></div>
+
+</div>
+</fieldset>
+
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+let p = document.getElementById("p");
+
+let number=p.textContent.match(/\d+/g).map(Number);
+
+let randomIndex=Math.floor(Math.random()*number.length)
+
+let randomNumber=number[randomIndex];
+
+document.querySelector("input").value=randomNumber
+})
+
+
+
+
+</script>
+  </body>
+</html>

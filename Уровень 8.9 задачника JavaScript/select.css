@@ -1,0 +1,53 @@
+
+
+.nav {
+    position: relative; /* Установим относительное позиционирование для навигации */
+}
+
+.nav > ul {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы */
+}
+
+.nav li {
+    position: relative; /* Устанавливаем относительное позиционирование для каждого элемента меню */
+    margin: 10px 0; /* Отступы между элементами меню */
+}
+
+.sub-menu {
+//display:none;
+    
+    position: absolute;
+    background-color: #252525; /* Цвет фона подменю */
+    padding: 10px; /* Добавим отступы внутри подменю */
+    border-radius: 5px; /* Закругляем углы */
+    z-index: 1000; /* Обеспечим правильный порядок слоёв */
+}
+.isVisible{
+display:block;
+}
+.hidden{
+display:none;
+}
+.nav-title{
+display:block;
+margin:30px;
+font-size:30px;
+}
+
+
+.sub-menu li {
+    list-style-type: none; /* Убираем маркеры у подменю */
+    margin: 0; /* Убираем отступы для подменю */
+}
+
+.sub-menu a {
+    color: white; /* Цвет текста для ссылок в подменю */
+    text-decoration: none; /* Убираем подчеркивание */
+    display: block; /* Даем блочное поведение элементам подменю */
+    padding: 5px 10px; /* Добавляем отступы для удобства */
+}
+
+.sub-menu a:hover {
+    background-color: #444; /* Фон при наведении на подменю */
+}

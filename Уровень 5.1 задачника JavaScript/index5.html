@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<label>число 1</label>
+<input type="number" id="name1">
+</div>
+
+<div>
+<label>число 2</label>
+<input type="number" id="name2">
+</div>
+</fieldset>
+<script>
+
+document.querySelectorAll("input").forEach(input=>{input.addEventListener("blur",()=>{
+const inputName1=document.getElementById("name1");
+const inputValue1=+inputName1.value;
+inputName1.value=inputValue1**2;
+})
+})
+
+document.querySelectorAll("input").forEach(input=>{input.addEventListener("blur",()=>{
+const inputName2=document.getElementById("name2");
+const inputValue2=+inputName2.value;
+inputName2.value=inputValue2**2
+
+})
+})
+
+
+
+</script>
+  </body>
+</html>

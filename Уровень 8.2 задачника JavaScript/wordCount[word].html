@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">В текстареа вводится текст со словами. По потери фокуса сделайте таблицу, в первой колонке которой будут слова из текста, во второй колонке - количество раз, которое это слово встречается, а в третьей - процентное содержание этого слова в текста.
+</p>
+<br>
+<hr>
+<table border="1">
+<thead>
+<tr>
+<th>Слова</th>
+<th>Количество</th>
+<th>Процент</th>
+</tr>
+</thead>
+<tbody><tr>
+<td id="text"></td>
+<td id="quantity"></td>
+<td id="percent"></td>
+</tr></tbody>
+</table>
+<br>
+<input id="input" type="text">
+</div>
+<div class="container" id="result"></div>
+
+
+<script>
+let text=document.getElementById("text")
+let quantity=document.getElementById("quantity")
+let percent=document.getElementById("percent")
+document.getElementById("input").addEventListener("blur",()=>{
+
+let inputVal=document.getElementById("input").value.trim().split(" ");
+text.innerHTML=inputVal.join(" ");
+
+const wordCount={}
+const totalWords=inputVal?inputVal.length:0;
+
+if(totalWords>0){
+for(const word of inputVal){
+wordCount[word]=(wordCount[word]||0)+1
+ }
+}
+Object.entries(wordCount).forEach(([key,value])=>{
+quantity.innerHTML=`${key}:${value}`;
+})
+
+let number=1/inputVal.length*100;
+
+percent.innerHTML=number+"%"
+
+input.value="";
+
+})
+
+
+
+
+
+
+
+</script>
+  </body>
+</html>

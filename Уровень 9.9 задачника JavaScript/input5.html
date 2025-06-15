@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Сделайте функцию, которая будет принимать число, а возвращать это число прописью. Пусть функция работает с числами до 999. Смотрите пример:
+
+func(123); // выведет 
+	'сто двадцать 
+	три' 
+</p>
+<br>
+<hr>
+<br>
+</div>
+<p id="result"></p>
+<script>
+let result=document.getElementById("result");
+let sotni=["","сто","двести","триста","четыреста","пятьсот","шестьсот","семьсот","восемьсот","девятьсот"];
+
+let des=["","","двадцать","тридцать","сорок","пятьдесят","шестьдесят","семьдесят","восемьдесят","девяносто"];
+
+let ed=["","один","два","три","четыре","пять","шесть","семь","восемь","девять"];
+let desytki=["","десять","одиннадцать","двенадцать","тринадцать","четырнадцать","пятнадцать","шестьнадцать","семьнадцать","воскмьнадцать","девятнадцвть"]
+
+function numbers(number){
+let index=number.toString().split("")
+
+let hundreds=parseInt(index[0])||0;
+let tens=parseInt(index[1])||0;
+let units=parseInt(index[2])||0;
+let resultText="";
+
+if(hundreds){
+resultText+=sotni[hundreds]+" ";
+}
+
+if(tens===1&&units>0){
+resultText+=desytki[units]+" ";
+}else{
+ if(tens){
+resultText+= des[tens]+" ";
+   }
+ if(units){
+resultText+=ed[units]+" "
+}
+  }
+
+result.innerHTML=resultText.trim()
+ }
+numbers(001)
+</script>
+  </body>
+</html>

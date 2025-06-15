@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Даны инпут и кнопка. В инпут вводится число. По клику на кнопку, проверьте, является ли это число совершенным.</p>
+<hr>
+<div id="container">
+<input id="input" type="number">
+<button class="btn"id="btn">Click</button>
+</div>
+
+<ul id="ul"></ul>
+<script>
+let sum=0;
+let ul=document.getElementById("ul");
+
+document.getElementById("btn").addEventListener("click",()=>{
+let inputVal=document.getElementById("input").value;
+
+
+for(let i=0;i<inputVal;i++){
+if(inputVal%i===0){
+sum+=i;
+
+}
+}
+
+if(sum===parseInt(inputVal)){
+let li=document.createElement("li")
+li.innerHTML=`Число ${inputVal} является совершенным`
+ul.append(li);
+}
+input.value="";
+sum=0;
+})
+
+
+
+
+
+
+
+
+</script>
+<style>
+
+</style>
+  </body>
+</html>

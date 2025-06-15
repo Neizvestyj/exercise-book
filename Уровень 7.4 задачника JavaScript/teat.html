@@ -1,0 +1,97 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+<style>
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #333;
+}
+
+.animated-text {
+    font-size: 3rem;
+    color: white;
+    position: relative;
+    cursor: pointer;
+}
+
+.animated-text span {
+    position: relative;
+    display: inline-block;
+    transition: transform 500ms ease-in-out;
+}
+
+.animated-text span::before,
+.animated-text span::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+}
+
+.animated-text span::before {
+    left: -15px;
+}
+
+.animated-text span::after {
+    right: -15px;
+}
+
+.animated-text.active span {
+    transform: scale(0);
+}
+
+.animated-text.active span::before,
+.animated-text.active span::after {
+    top: calc(50% - 20px * var(--i));
+    left: calc(50% - 5px + 30px * var(--j));
+    opacity: 1;
+}
+</style>
+<fieldset>
+<div id="place">
+<input type="number" id="input">
+
+<button type="button" class="btn" id="btn">Click</button>
+<div>
+<ul id="result"></ul>
+</div>
+
+</div>
+</fieldset>
+<div class="container">
+<p class="animated-text">Дан инп </p>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const text = document.querySelector('.animated-text');
+    const words = text.textContent.trim().split('');
+
+    text.innerHTML = words.map((char, index) => {
+        return `<span style="--i: ${index}; --j: ${Math.random()}">${char}</span>`;
+    }).join('');
+
+    text.addEventListener('click', () => {
+        text.classList.toggle('active');
+    });
+});
+</script>
+</body>
+</html>
+
+

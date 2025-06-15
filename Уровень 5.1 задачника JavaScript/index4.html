@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p id="p">Дан абзац с числом  2 и кнопка. По нажатию на кнопку возведите текст абзаца в квадрат.</p>
+<p id="p2">Даны абзацы с числами. 
+4
+Сделайте так, чтобы по клику на любой абзац его значение возводилось в квадрат.</p>
+
+</div>
+</fieldset>
+
+<script>
+/*document.getElementById("p"||"p2").addEventListener("click",()=>{
+let n=0; 
+let text=document.getElementById("p")
+let match= text.textContent.match(/\d+/);
+if(match){
+n=parseInt(match[0])**2
+}
+text.textContent=text.textContent.replace(match[0],n)
+})
+*/
+
+/*
+document.querySelectorAll("p").forEach((para)=>{
+para.addEventListener("click",()=>{
+
+let number=parseInt(para.textContent.match(/\d+/)[0]);
+para.textContent=`${number}**2=${number*number}`
+})
+
+})
+*/
+
+        const place = document.getElementById('place');
+        place.addEventListener('click', (e) => {
+            if (e.target && e.target.nodeName === 'P') {
+                let number = parseInt(e.target.textContent.match(/\d+/)[0]);
+                e.target.textContent = `${number} ** 2 = ${number * number}`;
+            }
+        });
+    
+
+
+
+</script>
+  </body>
+</html>

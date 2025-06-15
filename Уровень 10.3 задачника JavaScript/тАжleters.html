@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Напишите код, который будет генерировать пароль заданного размера. Пароль обязательно должен будет содержать маленькую и большую буквы, цифру и какой-то специальный символ.</p>
+<hr>
+<div class="container" id="container">
+</div>
+<input id="input"type="number">
+<button class="btn" id="btn">Click</button>
+<p id="result"></p>
+
+<script>
+let pasword
+let leters=["A","B","C","D","E","F","G","H","I","J","K","L","O","M","N"];
+let smol=["a","b","c","d","e","f","g","h","i","j","k","l","o"];
+let simbol=["-","/",":",";","?","!","@"];
+let result=document.getElementById("result");
+let numbers=["0","1","2","3","4","5","6","7","8","9"];
+let input=document.getElementById("input");
+
+function shuffle(array){
+for(let i=array.length-1;i>0;i--){
+let j=Math.floor(Math.random()*(i+1));
+[array[i],array[j]]=[array[j],array[i]]
+}
+}
+
+document.getElementById("btn").addEventListener("click",()=>{
+
+let inputVal=parseInt(input.value);
+let passwordArr=[];
+
+passwordArr.push(leters[Math.floor(Math.random()*leters.length)]);
+passwordArr.push(smol[Math.floor(Math.random()*smol.length)]);
+passwordArr.push(simbol[Math.floor(Math.random()*simbol.length)]);
+passwordArr.push(numbers[Math.floor(Math.random()*numbers.length)]);
+
+let shuffleArr=[...leters, ...smol, ...simbol,...numbers];
+
+for(let i=0;i<inputVal-4;i++){
+passwordArr.push(shuffleArr[Math.floor(Math.random()*shuffleArr.length)])
+shuffle(passwordArr)
+}
+result.innerHTML=passwordArr.join("")
+
+})
+
+</script>
+<style>
+
+td{
+width:40px;
+border:1px solid gray;
+}
+tr{
+height:30px;
+}
+table{
+border:1px solid gray;
+border-collapse:collapse;
+}
+.red{
+border:1px solid red;
+}
+.saveBtn{
+background-color:orange;
+}
+.hiden{
+display:none;
+}
+
+
+</style>
+  </body>
+</html>

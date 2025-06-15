@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p>Дан инпут и абзац. В инпут вводится строка со словами. По потери фокуса выведите в абзац количество слов во введенной строке.</p>
+<div id="place">
+<label>число 1</label>
+<input type="text" id="name1">
+</div>
+
+<button type="button" class="btn" id="btn">Расчитать</button>
+<div id="result"></div>
+
+</div>
+</fieldset>
+
+<script>
+document.getElementById("name1").addEventListener("blur",()=>{
+const n=document.getElementById("name1").value;
+
+let text=document.getElementById("result");
+text.textContent="Результат"+" "+n.match(/\b\w+\b/g).length}) 
+
+
+
+
+</script>
+  </body>
+</html>

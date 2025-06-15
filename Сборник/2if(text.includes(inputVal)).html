@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Дан абзац и инпут. В абзаце через пробел написаны слова. В инпут вводится некоторое слово. По потери фокуса проверьте, есть ли такое слово в абзаце, и если нет - добавьте его.
+</p>
+<input id="input" type="text">
+</div>
+<div class="container" id="result"></div>
+
+
+<script>
+
+let p=document.getElementById("p");
+ document.getElementById("input").addEventListener("blur",()=>{
+
+let text=p.innerText.split(" ");
+
+let inputVal=document.getElementById("input").value.trim();
+
+if(text.includes(inputVal)){
+alert("Слово уже есть в тексте ");
+input.value="";
+}else{
+text.push(inputVal);
+p.innerText= text.join(" ");
+input.value="";
+}
+
+})
+
+
+
+
+
+
+
+</script>
+  </body>
+</html>

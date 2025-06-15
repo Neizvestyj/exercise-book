@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<div id="div">
+<p id="p">
+Дана строка с текстом. Получите процентное содержание каждого символа текста в виде объекта, в котором ключами будут символы, а значениями - их процентное содержание.
+</p>
+<ul id="ul"></ul>
+</div>
+<button type="button" class="btn" id="btn">Click</button>
+<script>
+let ul=document.getElementById("ul");
+let text=document.getElementById("p").innerHTML.split("");
+let wordCount={};
+document.getElementById("btn").addEventListener("click",()=>{
+
+for(let word of text){
+wordCount[word]=(((wordCount[word]||0)+1)/text.length*100).toFixed(1);
+}
+let li=document.createElement("li")
+li.innerHTML+=JSON.stringify(wordCount)
+ul.append(li)
+})
+
+
+
+
+
+
+
+</script>
+<style>
+
+
+</style>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="select.css">    
+  </head>
+  <body>
+<p id="p">Дан такой список дел за определенную дату:
+
+let affairs = {
+	'2019-12-31': ['массив дел'],
+	'2018-11-29': ['массив дел'],
+	'2018-11-30': ['массив дел'],
+	'2018-12-27': ['массив дел'],
+	'2019-12-29': ['массив дел'],
+	'2019-12-30': ['массив дел'],
+	'2018-12-30': ['массив дел'],
+	'2018-12-31': ['массив дел'],
+}
+Выведите на экран все дела за 2018 год.
+</p>
+<hr>
+<p id="result"></p>
+
+
+<script>
+let result=document.getElementById("result");
+let affairs = {
+	'2019-12-31': ['массив дел'],
+	'2018-11-29': ['массив дел'],
+	'2018-11-30': ['массив дел'],
+	'2018-12-27': ['массив дел'],
+	'2019-12-29': ['массив дел'],
+	'2019-12-30': ['массив дел'],
+	'2018-12-30': ['массив дел'],
+	'2018-12-31': ['массив дел'],
+};
+let arr={}
+Object.keys(affairs).forEach(date=>{
+const [year,month,day]=date.split("-")
+if(year==="2018"){
+ if(!arr[year]){
+arr[year]=[];
+}
+arr[year].push(...affairs[date])
+}
+
+})
+result.innerHTML=JSON.stringify(arr)
+
+
+
+
+
+
+
+
+</script>
+<style>
+body{
+background-color:black;
+color:white;
+}
+#container{
+border:2px solid blue;
+width:400px;
+height:100px;
+
+background-color:orange;
+position:relative;
+}
+.close-btn{
+position:absolute;
+top:5px;
+right:5px;
+cursor:pointer;
+}
+
+</style>
+  </body>
+</html>

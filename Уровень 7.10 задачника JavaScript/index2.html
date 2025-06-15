@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<button type="button" class="btn" id="btn">Click</button>
+
+<p id="p">Напишите программу, которая сформирует следующую строку:
+
+'11 12 13 21 22 23 31 32 33'</p>
+</div>
+<div class="container" id="result"></div>
+
+
+<script>
+let result=document.getElementById("result")
+
+document.getElementById("btn").addEventListener("click",()=>{
+let arr=[]
+
+/*for(let i=11;i<34;i++){  
+if(i===14||i===24)
+i+=7
+arr.push(i)
+}
+result.append(arr)
+*/
+
+for(let i=1;i<=3;i++){
+   for(let j=1;j<=3;j++){
+arr.push(i*10+j)
+}
+}
+result.append(arr)
+})
+
+
+
+
+
+
+
+</script>
+  </body>
+</html>

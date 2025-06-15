@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p>Дан абзац и инпут. В инпут вводятся числа, разделенные запятыми. Сделайте так, чтобы по мере ввода данных в инпут в абзац выводилась сумма введеных чисел.</p>
+<p>Дан абзац и кнопка. Каждое нажатие на кнопку добавляет новый инпут. В инпуты вводятся числа. Сделайте так, чтобы по мере ввода чисел в инпуты в абзац выводилась сумма введеных чисел</p>
+<p>Дано произвольное количество инпутов и кнопка. В инпуты вводятся числа. По нажатию на кнопку найдите сумму введенных чисел и выведите в текст кнопки.
+</p>
+
+<div id="sumResult"></div>
+<div id="result">
+</div>
+
+
+<button type="button" class="btn" id="btn">Click</button>
+
+
+</div>
+</fieldset>
+
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+
+
+let result=document.getElementById("result");
+let ul=document.createElement("ul");
+let li=document.createElement("li");
+let input=document.createElement("input");
+let span=document.createElement("span")
+input.type="text";
+input.id="input";
+result.append(ul);
+ul.append(li);
+li.append(input);
+check(input) 
+})
+
+function check(input){
+input.addEventListener("input",updateSum)
+}
+
+
+
+function updateSum(){
+const inputs=document.querySelectorAll("input[type='text']");
+
+let arr=[]
+
+inputs.forEach(input=>{
+let inputValue=input.value;
+
+const numbers=inputValue.split(",").map(num=>parseFloat(num.trim())).filter(num=>!isNaN(num));
+
+const sum=numbers.reduce((prev,curr)=>
+prev+curr,0);
+
+arr=arr.concat(numbers);
+
+let sums=arr.reduce((prev,curr)=>
+prev+curr,0);
+
+document.getElementById("sumResult").innerText=`Вы ввели ${numbers.join(",")}, сумма цифр ${sum},
+общая сумма цифр ${sums}`
+
+document.getElementById("btn").innerHTML=sums
+})
+}
+check()
+</script>
+
+
+  </body>
+</html>

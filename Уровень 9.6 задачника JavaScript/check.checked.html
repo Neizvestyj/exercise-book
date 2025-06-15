@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Дано пять чебоксов. Сделайте так, чтобы одновременно можно было отметить не более трех из них.
+</p>
+<hr>
+<div id="container">
+<input type="checkbox" value=1>input 1
+<input type="checkbox" value=1>input 2
+<input type="checkbox" value=1>input 3
+<input type="checkbox" value=1>input 4
+<input type="checkbox" value=1>input 5
+</div>
+
+<script>
+
+let container=document.getElementById("container");
+let checks=container.querySelectorAll("input[type='checkbox']");
+
+checks.forEach(check=>{
+check.addEventListener("change",()=>{
+let checkedCount=Array.from(checks).filter(checkbox=>
+checkbox.checked).length;
+
+if(checkedCount>3){
+check.checked=false;
+alert("Нельзя выбрать более 3 пунктов")
+}
+})
+
+})
+
+
+</script>
+<style>
+
+</style>
+  </body>
+</html>

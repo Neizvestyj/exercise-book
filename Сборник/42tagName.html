@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Дана таблица. Сделайте так, чтобы по клику на любую ячейку в этой ячейке появлялся порядковый номер клика.</p>
+<hr>
+<div class="container" id="container">
+
+<table>
+ <thead>
+  <tr>
+<th onclick="sortTable(0)">Имя</th>
+<th onclick="sortTable(1)">Возраст</th>
+<th onclick="sortTable(2)">Город</th>
+  </tr>
+ </thead>
+
+ <tbody>
+  <tr>
+<td></td>
+<td></td>
+<td></td>
+  </tr>
+  <tr>
+<td></td>
+<td></td>
+<td></td>
+  </tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+  </tr>
+
+ </tbody>
+</table>
+</div>
+<script>
+let n=0;
+const table=document.querySelector("table tbody");
+table.addEventListener("click",(event)=>{
+if(event.target.tagName==="TD"){
+n++;
+event.target.innerHTML=n;
+}
+})
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+<style>
+
+td{
+width:100px;
+border:1px solid gray;
+}
+tr{
+height:30px;
+}
+table{
+border:1px solid gray;
+border-collapse:collapse;
+}
+.red{
+border:1px solid red;
+}
+.saveBtn{
+background-color:orange;
+}
+.hiden{
+display:none;
+}
+
+
+</style>
+  </body>
+</html>

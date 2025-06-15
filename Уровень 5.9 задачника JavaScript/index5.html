@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p id="p">Дан массив [1,2,3,4,5,6,7] с числами, кнопка и инпут. По нажатию на кнопку запишите в инпут все числа из массива, разделив их запятыми.
+</p>
+<p>В инпут вводится дата в формате 2025-12-31. По потери фокуса сделайте так, чтобы в инпуте стала дата в формате 35.12.2025.</p>
+<p>Дан пустой список ul и текстареа. В него вводится текст со знаками препинания. По потери фокуса запишите каждое предложение из текста в свой тег li.</p>
+<div id="place">
+<ul id="ul">
+
+</ul>
+<textarea type="text" id="name1"></textarea>
+</div>
+
+<div id="results"></div>
+
+</div>
+</fieldset>
+
+<script>
+document.getElementById("name1").addEventListener("blur",()=>{
+let text=document.getElementById("name1").value;
+
+const pattern=/[^.!?]+[.!?]+/g;
+
+let result=text.match(pattern);
+
+let ul=document.getElementById("ul");
+
+result.forEach(result=>{
+ul.insertAdjacentHTML('beforeend',`<li>${result.trim()}</li>`)
+})
+
+
+
+
+/*for(let i=0;i<result.length;i++){
+let li=document.createElement("li")
+li.textContent=result[i].trim();
+ul.appendChild(li);
+}*/
+
+}) 
+
+
+
+
+</script>
+  </body>
+</html>

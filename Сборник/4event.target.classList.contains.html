@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<button type="button" class="btn" id="btn">Click</button>
+
+<p id="p">Дана кнопка и список ul. По клику на кнопку добавьте в конец каждой li ссылку, по нажатию на которую текст li будет перечеркиваться (но не текст ссылки).</p>
+</div>
+<ul id="result">
+<li>Дана кнопка и список ul.</li>
+<li>Дана кнопка и список ul.</li>
+<li>Дана кнопка и список ul.</li>
+<li>Дана кнопка и список ul.</li>
+<li>Дана кнопка и список ul.</li>
+</ul>
+
+
+<script>
+let ul=document.getElementById("result");
+let linksAdded=false;
+
+document.getElementById("btn").addEventListener("click",()=>{
+if(!linksAdded){
+let li=ul.querySelectorAll("li");
+
+li.forEach(item=>{
+item.innerHTML+='<a class="link" href="#">сылка</a>'
+});
+linksAdded=true;
+}
+})
+
+ul.addEventListener("click",(event)=>{
+if(event.target.classList.contains("link")){
+event.preventDefault();
+
+let parentLi=event.target.parentNode;
+parentLi.classList.toggle("line")
+}
+})
+
+
+
+
+
+
+
+
+</script>
+  </body>
+</html>

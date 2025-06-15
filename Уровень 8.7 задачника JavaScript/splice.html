@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+Ускорение :<span id="count">Скорость</span>
+<fieldset>
+<div id="place">
+<p id="p">Дано слово. Перемешайте буквы этого слова в случайном порядке.
+</p>
+<p id="result">Дано слово. Перемешайте буквы этого слова в случайном порядке.</p>
+
+<button class="btn" id="btn">Click</button>
+</div>
+</fieldset>
+
+<script>
+let tap=0
+let count=document.getElementById("count")
+
+
+
+document.getElementById("btn").addEventListener("click",()=>{
+tap++;
+count.innerHTML="Скорость X "+ tap
+if(tap===10){
+count.innerHTML="Скорость X "+ tap +" Бляяя хвааатииит!!!"
+}
+let  str=document.getElementById("p").innerHTML.split("");
+
+function getRandom(){
+let randomIndex=Math.floor(Math.random()*str.length);
+
+let randomIndexTo=Math.floor(Math.random()*str.length+1);
+
+let n=str.splice(randomIndex,1)
+str.splice(randomIndexTo,0,n)
+document.getElementById("result").innerHTML=str.join("");
+}
+setInterval(getRandom,100)
+
+})
+
+
+
+
+</script>
+  </body>
+</html>

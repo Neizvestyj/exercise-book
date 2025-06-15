@@ -1,0 +1,74 @@
+td{
+width:128px; 
+height:43px; 
+
+}
+input{
+width:25%;
+}
+.blue{
+color:blue;
+}
+.red{
+color:red;
+}
+.green{
+color:green;
+}
+.block{
+display:flex;
+justify-content:space-between;
+
+}
+
+/* Основные стили для кнопки */
+.btn {
+    padding: 10px 20px;          /* Отступы внутри кнопки */
+    background-color: #4CAF50;  /* Основной цвет фона */
+    color: white;                /* Цвет текста */
+    border: none;                /* Убираем рамку */
+    border-radius: 5px;         /* Закругленные углы */
+    font-size: 16px;             /* Размер шрифта */
+    cursor: pointer;             /* Указатель при наведении */
+    transition: background-color 0.3s ease, transform 0.2s; /* Плавные переходы */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+/* Эффект при наведении */
+.btn:hover {
+    background-color: #45a049;   /* Изменяем цвет фона */
+    transform: scale(1.05);      /* Увеличение кнопки */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Более выраженная тень при наведении */
+}
+
+/* Эффект при нажатии */
+.btn:active {
+    transform: scale(0.95);       /* Немного уменьшение кнопки при нажатии */
+}
+
+
+.name1 {
+    width: 100%;         /* Ширина на 100% от родительского элемента */
+    max-width: 400px;   /* Максимальная ширина 400px */
+    padding: 10px;      /* Внутренний отступ */
+    border: 2px solid #3498db; /* Цвет рамки */
+    border-radius: 5px; /* Закругленные углы */
+    font-size: 16px;    /* Размер шрифта */
+    color: #333;        /* Цвет текста */
+    background-color: #f9f9f9; /* Цвет фона */
+    transition: border 0.3s, background-color 0.3s; /* Плавные изменения */
+}
+
+/* Стиль при получении фокуса */
+.name1:focus {
+    border-color: #2980b9; /* Цвет рамки при фокусе */
+    background-color: #ffffff; /* Цвет фона при фокусе */
+    outline: none; /* Убираем обводку по умолчанию */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Тень при фокусе */
+}
+
+/* Стиль при вводе текста */
+.name1::placeholder {
+    color: #aaaaaa; /* Цвет для плейсхолдера */
+    opacity: 1;    /* Прозрачность плейсхолдера */
+    font-style: italic; /* Курсивный стиль для плейсхолдера */

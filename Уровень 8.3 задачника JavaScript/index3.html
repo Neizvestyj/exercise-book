@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Выведите на экран следующую пирамидку:
+
+111
+222
+333
+444
+555
+666
+777
+888
+999</p>
+<hr>
+<button type="button" class="btn" id="btn">Click</button>
+<ul id="ul"></ul>
+<script>
+
+
+
+let ul=document.getElementById("ul");
+
+document.getElementById("btn").addEventListener("click",()=>{
+
+for(let i=1;i<=9;i++){
+let x=[]
+x.push(String(i).repeat(3))
+let li=document.createElement("li")
+li.append(x)
+
+ul.append(li)
+}
+
+})
+
+
+
+
+
+
+</script>
+<style>
+.container{
+display:flex;
+flex-direction:column;
+gap:10px;
+
+
+}
+.item{
+display:flex;
+align-items:center;
+}
+input[type="checkbox"]{
+margin-right:10px;
+}
+</style>
+  </body>
+</html>

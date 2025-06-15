@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p id="year"></p>
+<p id="month"></p>
+<p id="day"></p>
+<p id="result">Результат</p>
+
+<button type="button" class="btn" id="btn">Расчитать</button>
+</div>
+</fieldset>
+
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+alert(1)
+let n=new Date();
+let text = document.getElementById("result");
+text.textContent="Результат" + " "+n;
+
+document.getElementById("year").textContent = "Текущий год"+" "+(n.getFullYear());
+
+document.getElementById("month").textContent = "Текущий месяц"+" "+(n.getMonth()+1);
+
+document.getElementById("day").textContent = "Текущий день "+" "+(n.getDate());
+
+
+})
+
+
+
+
+</script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Дан инпут, абзац и кнопка. В инпут вводится целое число. По нажатию на кнопку выведите в абзац разложение этого числа на простые множители.
+</p>
+<hr>
+<div id="container">
+<input id="input" type="number">
+<ul id="ul">
+</ul>
+</div>
+<button class="btn" id="btn">Click</button>
+<p id="result"></p>
+<script>
+let ul=document.getElementById("ul");
+let input=document.getElementById("input")
+document.getElementById("btn").addEventListener("click",()=>{
+
+let inputVal=parseInt(input.value); 
+let divisor=2;
+
+while(inputVal>1){
+if(inputVal%divisor===0){
+let li=document.createElement("li")
+li.innerHTML=divisor;
+ul.append(li);
+inputVal/=divisor;
+}else{
+divisor++;
+}
+}
+
+input.value=""
+})
+
+</script>
+<style>
+
+</style>
+  </body>
+</html>

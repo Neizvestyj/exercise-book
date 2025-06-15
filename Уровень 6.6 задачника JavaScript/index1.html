@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+
+<p id="p">Дан массив [1,2,"t",7,"q","h"], инпут, кнопка и абзац. В инпут вводится число. По нажатию на кнопку выведите в абзац элемент массива, номер которого введен в инпут.
+</p>
+<div id="result"></div>
+
+<input class="name1" type="number" id="input" placeholder="Введите заметку">
+
+<button type="button" class="btn" id="btn">Click</button>
+
+</div>
+</fieldset>
+
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+let arr=[1,2,"t",7,"q","h"];
+let input=parseInt(document.getElementById("input").value);
+
+if(input>arr.length||isNaN(input)||input<1){result.textContent='Ошибка введите число от 1 до arr.length'}else{
+
+let result=document.getElementById("result").textContent=arr[input-1]
+}
+}) 
+
+
+
+
+
+</script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p>Даны теги li с числами, инпут и кнопка. По нажатию на кнопку найдите сумму чисел и выведите их в инпут.
+</p>
+<p>Даны теги li с числами и кнопка. По нажатию на кнопку увеличьте все числа в тегах li на единицу.</p>
+<p>Дан инпут, абзац и кнопка. В инпут вводится число. По нажатию на кнопку получите массив делителей числа и выведите их в абзац через запятую.</p>
+<div id="place">
+<label>число 1</label>
+<input type="text" id="name1">
+</div>
+
+<button type="button" class="btn" id="btn">Расчитать</button>
+<div id="result"></div>
+
+</div>
+</fieldset>
+
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+
+const number=parseInt(document.getElementById("name1").value);
+let arr=[];
+for(let i=1;i<=number;i++){
+if(number%i===0){
+arr.push(i)}
+}
+let result=document.getElementById("result")
+result.textContent=arr
+}) 
+
+</script>
+  </body>
+</html>

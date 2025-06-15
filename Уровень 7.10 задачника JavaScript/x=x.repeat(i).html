@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<button type="button" class="btn" id="btn">Click</button>
+
+<p id="p">Напишите программу, которая сформирует следующую строку:
+
+'-x-xx-xxx-xx-x-'</p>
+</div>
+<div class="container" id="result"></div>
+
+
+<script>
+let result=document.getElementById("result")
+
+document.getElementById("btn").addEventListener("click",()=>{
+let arr=[]
+for(let i =1;i<3;i++){  
+  let x="x".repeat(i)
+  arr.push("-"+x) 
+}
+arr.push("-")
+
+
+for(let i =3;i>=1 ;i--){  
+  let x="x".repeat(i)
+  arr.push(x+"-")
+}
+
+result.textContent=arr.join("")
+
+})
+
+
+
+
+
+
+
+</script>
+  </body>
+</html>

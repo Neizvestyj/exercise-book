@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style2.css">    
+  </head>
+  <body>
+
+<div id="place">
+<p>Дана таблица и инпут. В инпут вводится дата рождения юзера в формате год-месяц-день. Выведите в первой колонке все даты рождения юзера, а во второй колонке - соответствующие дни недели.
+</p>
+<p id="test"></p>
+<div>
+<input type="text" id="input" placeholder="2024-10-10">
+</div>
+
+<button type="button" class="btn" id="btn">Click</button>
+</div>
+<div id="container"></div>
+
+
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+let 
+dayOfweek=["вс","пн","вт","ср","чт","пт","сб"];			
+let input =document.getElementById("input").value;
+let nowData=new Date().getFullYear()
+let dataR=new Date(input).getFullYear();
+let table=document.createElement("table");
+
+for(let i=dataR;i<=nowData;i++){
+let dataObj=new Date(i,0,1)
+let tr=document.createElement("tr");
+table.appendChild(tr);
+
+let yearTd=document.createElement("td");
+yearTd.innerHTML=i;
+let dayTd=document.createElement("td");
+dayTd.innerHTML=dayOfweek[dataObj.getDay()];
+tr.appendChild(yearTd);
+tr.appendChild(dayTd);
+
+yearTd.style.border="1px solid gray";
+dayTd.style.border="1px solid gray"
+}
+
+
+document.getElementsByTagName("div")[0].append(table)
+
+})
+
+
+</script>
+  </body>
+</html>

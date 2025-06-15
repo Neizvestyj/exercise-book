@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Дана прямоугольная таблица. По нажатию на кнопку покрасьте ячейки одной диагонали в красный цвет, а второй диагонали - в зеленый.</p>
+<hr>
+<div class="container" id="container">
+</div>
+<button class="btn" id="btn">Click</button>
+
+
+<script>
+let arr=[];
+
+const container=document.querySelector('.container');
+let
+table=document.createElement("table");
+
+for(let i=0;i<=6;i++){
+let tr=document.createElement("tr");
+
+for(let j=0;j<=5;j++){
+let td=document.createElement("td");
+td.innerHTML=i+1+" "+j;
+
+tr.appendChild(td);
+}
+table.appendChild(tr)
+}
+container.appendChild(table);
+document.getElementById("btn").addEventListener("click",()=>{
+
+for(let i=0;i<6;i++){
+table.rows[i].cells[i].style.backgroundColor="red";
+table.rows[i+1].cells[i].style.backgroundColor="red"
+}
+
+for(let i=6;i>=0;i--){
+ for(let j=0;j<6;j++){
+if(i+j===5){
+table.rows[i].cells[j].style.backgroundColor="blue";
+table.rows[i+1].cells[j].style.backgroundColor="blue";
+}
+}
+}
+
+
+
+
+})
+</script>
+<style>
+
+td{
+width:40px;
+border:1px solid gray;
+}
+tr{
+height:30px;
+}
+table{
+border:1px solid gray;
+border-collapse:collapse;
+}
+.red{
+border:1px solid red;
+}
+.saveBtn{
+background-color:orange;
+}
+.hiden{
+display:none;
+}
+
+
+</style>
+  </body>
+</html>

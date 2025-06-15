@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+
+<fieldset>
+<div id="place">
+<p id="p">Дан инпут, кнопка и список ul. В инпут вводится число. По клику на кнопку выведите список всех возможных вариантов разложения числа на два множителя.</p>
+<input id="input"type="number">
+<button class="btn" id="btn">Click</button>
+</div>
+<ul id="ul">
+
+</ul>
+</fieldset>
+
+<script>
+let ul=document.getElementById("ul");
+
+document.getElementById("btn").addEventListener("click",()=>{
+let inputVal=+document.getElementById("input").value;
+for(let i=inputVal;i>0;i--){
+if(inputVal%i===0){
+let li=document.createElement("li")
+li.innerHTML=i+" /"+inputVal/i;
+ul.append(li)
+ }
+}
+
+})
+
+
+
+
+</script>
+  </body>
+</html>

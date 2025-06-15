@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">
+Сделайте функцию, которая будет устанавливать правильную форму существительного после числа. Вот как должна работать эта функция:
+</p>
+<hr>
+<div class="container" id="container">
+</div>
+<input id="input" type="number">
+<button class="btn" id="btn">Click</button>
+
+<p id="result"></p>
+<script>
+let arr=['яблоко','яблока','яблок'];
+let result=document.getElementById("result");
+
+document.getElementById("btn").addEventListener("click",()=>{
+let input=document.getElementById("input");
+let inputVal=parseInt(input.value);
+print(inputVal,arr)
+input.value=""
+})
+
+function print(number,arr){
+if(number%100>4&&number%100<21){
+result.innerHTML=number+" "+ arr[2]
+}else if(number%10===1){
+result.innerHTML=number+" "+ arr[0]
+}else if(number%10===2||number%10===3||number%10===4){
+result.innerHTML=number+" "+ arr[1]
+}else{
+result.innerHTML=number+" "+ arr[2]
+}
+
+}
+
+</script>
+<style>
+
+
+
+</style>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+
+<fieldset>
+<div id="place">
+<p id="p">№5
+Дан список событий за определенные даты, хранящийся в следующей структуре:
+
+let events = {
+	'2019-12-29': ['name1', 
+		'name3', 'name5', 
+		'name7'], 
+	'2019-12-30': ['name4', 
+		'name8', 
+		'name9'], 
+	'2019-12-31': ['name2', 
+		'name6'], 
+}
+Напишите код, которой переделает структуру данных вот в такую:
+
+let events = [
+	{
+		date:  '2019-12-29'
+		event: 'name1'
+	},
+	{
+		date:  '2019-12-31'
+		event: 'name2'
+	},
+	{
+		date:  '2019-12-29'
+		event: 'name3'
+	},
+	{
+		date:  '2019-12-30'
+		event: 'name4'
+	},
+	{
+		date:  '2019-12-29'
+		event: 'name5'
+	},
+	{
+		date:  '2019-12-31'
+		event: 'name6'
+	},
+	{
+		date:  '2019-12-29'
+		event: 'name7'
+	},
+	{
+		date:  '2019-12-30'
+		event: 'name8'
+	},
+	{
+		date:  '2019-12-30'
+		event: 'name9'
+	},
+]</p>
+<button class="btn" id="btn">Click</button>
+</div>
+<p id="p">
+</p>
+<ul id="ul"></ul>
+</fieldset>
+
+<script>
+let events = {
+	'2019-12-29': ['name1', 
+		'name3', 'name5', 
+		'name7'], 
+	'2019-12-30': ['name4', 
+		'name8', 
+		'name9'], 
+	'2019-12-31': ['name2', 
+		'name6'], 
+}
+let p=document.getElementById("p");
+
+let resultEvents=[];
+
+document.getElementById("btn").addEventListener("click",()=>{
+
+for(let date in events){
+events[date].forEach(event=>{
+resultEvents.push({date:date,event:event})
+})
+}
+
+resultEvents.sort((a,b)=>a.event.localeCompare(b.event))
+p.innerHTML=JSON.stringify(resultEvents)
+})
+
+
+
+
+</script>
+  </body>
+</html>

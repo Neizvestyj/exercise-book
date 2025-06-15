@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style2.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p>Дан список ul с числами, инпут и кнопка. В инпут вводится число. По клику на кнопку покрасьте в красный цвет li, содержащее введенное число.
+</p>
+<p id="test"></p>
+
+
+
+<div><ul id="ul">
+<li>1</li>
+<li>6</li>
+<li>3</li>
+<li>7</li>
+<li>5</li>
+<li>2</li>
+<li>4</li>
+</ul></div>
+
+<input type="number" id="input">
+
+<button type="button" class="btn" id="btn">Click</button>
+</div>
+</fieldset>
+
+<script>
+
+
+document.getElementById("btn").addEventListener("click",()=>{
+let inputNumber=parseInt(document.getElementById("input").value);
+let ul=document.getElementById("ul");
+let li=ul.querySelectorAll("li");
+
+let arr=[];
+
+li.forEach((item)=>{
+arr.push(parseInt(item.innerText))
+})
+
+
+let index=arr.indexOf(inputNumber)
+alert(index)
+li[index].style.color="red";
+input.value="" 
+
+/*let index=Array.from(li).findIndex(item=>
+parseInt(item.innerText)===inputNumber)*/
+
+})
+
+
+
+</script>
+  </body>
+</html>

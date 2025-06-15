@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<input type="number" id="input">
+
+<button type="button" class="btn" id="btn">Click</button>
+<div>
+<ul id="result"></ul>
+</div>
+
+</div>
+</fieldset>
+<p id="p">Дан абзац, содержащий текст со словами. Некоторые слова повторяются два раза. По клику на кнопку удалите лишние лишние одинаковые рядом стоящие слова.</p>
+
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+let p =document.getElementById("p");
+let arr=[];
+arr=p.innerHTML.split(" ")
+let arr2=[];
+
+for(let i=0;i<arr.length;i++){
+if(arr[i]!==arr[i+1]){
+arr2.push(arr[i])
+}
+alert(arr2)
+}
+p.innerHTML=arr2.join(" ")
+}) 
+
+
+
+
+
+</script>
+  </body>
+</html>

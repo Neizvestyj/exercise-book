@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<style>
+.blue {
+    color: blue;
+}
+.green {
+    color: green;
+}
+.red {
+    color: red;
+}
+.yellow {
+    color: yellow;
+}
+.purple {
+    color: purple;
+}</style>
+<fieldset>
+<div id="place">
+
+<p id="p">Дан абзац, кнопка и массив с цветами. Пусть нажатие на кнопку красит абзац в следующий цвет из массива и так по кругу.
+</p>
+<p id="spans">Дан абзац, кнопка и массив с цветами
+ [<span id="blue">"Синий"</span>,<span id ="green">"Зеленый"</span>,<span id ="red">"Красный"</span>,<span id="yellow">"Желтый"</span>,<span id="purple">"Фиолетовый"</span>]</p>
+<div id="result"></div>
+
+<button type="button" class="btn" id="btn">Click</button>
+
+</div>
+</fieldset>
+
+<script>
+let colors=["blue","green","red","yellow","purple"];
+let p=document.getElementById("p")
+let i=0;
+let spans=document.querySelectorAll('#spans span')
+
+document.getElementById("btn").addEventListener("click",()=>{
+p.style.color=colors[i];
+
+
+spans.forEach((span,index)=>{
+span.classList.remove(...colors)
+if(index===i){
+span.classList.add(colors[i])
+}
+})
+i=(i+1)%colors.length;
+
+
+
+})
+
+
+
+
+
+
+</script>
+  </body>
+</html>

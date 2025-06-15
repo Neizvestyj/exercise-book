@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style2.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p>Напишите программу, которая сформирует следующий массив:
+
+[
+	['x'],
+	['x', 'x'],
+	['x', 'x', 'x'],
+	['x', 'x', 'x', 'x'],
+	['x', 'x', 'x', 'x', 'x'],
+]
+</p>
+<p id="result"></p>
+
+
+<button type="button" class="btn" id="btn">Click</button>
+</div>
+</fieldset>
+
+<script>
+
+
+document.getElementById("btn").addEventListener("click",()=>{
+let p=document.getElementById("result");
+let arr=[];
+for(let i=1;i<=5;i++){
+let arr2=[];
+for(let j=0;j<i;j++){
+arr2.push('x')
+}
+arr.push(arr2)
+}
+
+//или
+
+for(let i=0;i<5;i++){
+let innerArray=Array(i).fill("x")
+
+}
+
+console.log(innerArray)
+
+})
+
+
+
+</script>
+  </body>
+</html>

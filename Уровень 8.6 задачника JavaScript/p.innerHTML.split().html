@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p id="p">Дан абзац со словами и инпут В инпут вводится слово По клику на кнопку найдите это слово в абзаце и покрасьте его в красный цвет
+</p>
+<input id="input" type="text">
+
+<button class="btn" id="btn">Click</button>
+</div>
+</fieldset>
+
+<script>
+
+let p=document.getElementById("p");
+let input=document.getElementById("input");
+
+document.getElementById("btn").addEventListener("click",()=>{
+let inputVal=input.value.toLowerCase();
+let text=p.innerHTML.split(/[\s,]+/);
+let newHtml='';
+
+text.forEach(item=>{
+newHtml+=`<span class='word'>${item}</span> `
+})
+p.innerHTML=newHtml;
+let spans=document.querySelectorAll(".word")
+spans.forEach(item=>{
+if(item.innerHTML.toLowerCase()===inputVal){
+
+item.style.color="red";
+//p.innerHTML=""
+input.value=""
+
+}
+
+})
+})
+
+
+</script>
+  </body>
+</html>

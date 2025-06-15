@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Дан массив со словами. Получите из этого массива случайное слово, начинающееся на заданную букву.
+</p>
+<hr>
+<div id="container">
+<input id="input" type="text">
+<ul id="ul">
+</ul>
+</div>
+<button class="btn" id="btn">Click</button>
+<p id="result"></p>
+<script>
+let result=document.getElementById("result");
+let input=document.getElementById("input");
+let arr=document.getElementById("p").innerHTML.split(" ");
+
+document.getElementById("btn").addEventListener("click",()=>{
+let inputVal=input.value.toLowerCase(); 
+let arrLeter=[];
+
+arr.forEach(item=>{
+if(item[0].toLowerCase()===inputVal){
+arrLeter.push(item)
+}
+})
+
+let random=Math.floor(Math.random()*arrLeter.length)
+alert(arrLeter)
+result.innerHTML=JSON.stringify(arrLeter[random])
+
+input.value="";
+})
+
+</script>
+<style>
+
+</style>
+  </body>
+</html>

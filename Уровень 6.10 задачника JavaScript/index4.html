@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style2.css">    
+  </head>
+  <body>
+
+<fieldset>
+<p>Даны текстареа, инпут и кнопка. В текстареа вводится текст со словами. В инпут вводится слово. По нажатию на кнопку выведите на экран, сколько раз встречается это слово в веденном тексте.
+</p>
+
+<div>
+<textarea id="textarea" type="text"></textarea>
+</div>
+<div>
+<input id="input" type="text">
+</div>
+<div id="result"></div>
+<button type="button" class="btn" id="btn">Click</button>
+</fieldset>
+
+<script>
+let textarea=document.getElementById("textarea");
+let input=document.getElementById("input")
+let 
+result=document.getElementById("result")
+
+document.getElementById("btn").addEventListener("click",()=>{
+let n=0
+let arrText=textarea.value.split(" ");
+let inputText=input.value;
+
+/*arrText.forEach(item=>{
+if(item===inputText){
+n++;
+}
+})*/
+n=arrText.filter(item=>item===inputText).length
+ 
+result.textContent=`${n}`
+})
+
+
+
+
+</script>
+  </body>
+</html>

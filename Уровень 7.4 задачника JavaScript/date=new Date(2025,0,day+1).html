@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<button type="button" class="btn" id="btn">Click</button>
+<div>
+<ul id="result"></ul>
+</div>
+
+</div>
+</fieldset>
+<p>Дан ul. Выведите в него дни текущего месяца. Текущий день, а также выходные, выделите другими цветами.</p>
+
+<script>
+let 
+dayOfweek=["вс","пн","вт","ср","чт","пт","сб"];
+
+
+document.getElementById("btn").addEventListener("click",()=>{
+let result=document.getElementById("result");
+
+
+for(let day=5;day<30;day++){
+let li=document.createElement("li")
+let date=new Date(2025,0,day+1);
+
+if(date.getDay()===6||date.getDay()===0){
+
+li.textContent=date.toLocaleDateString('ru-RU')+' '+dayOfweek[date.getDay()];
+result.appendChild(li)
+li.style.color="red";
+}else{
+li.textContent=date.toLocaleDateString('ru-RU')+' '+dayOfweek[date.getDay()];
+}
+result.appendChild(li)
+
+}
+}) 
+
+
+
+
+
+</script>
+  </body>
+</html>

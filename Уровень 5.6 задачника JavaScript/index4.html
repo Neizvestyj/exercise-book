@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+
+
+<div class="p"id="p"> 
+Дан див с шириной, высотой и границей, и кнопка. По клику на кнопку увеличьте размеры дива в два раза.
+</div>
+<div>
+<button type="button" class="btn" id="btn">Расчитать</button>
+</div>
+
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+document.getElementById("p").classList.toggle("active")
+})
+
+
+
+
+</script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Дана таблица и кнопка. По клику на кнопку поменяйте местами первый и второй ряд таблицы.</p>
+<p>Дана таблица и кнопка. По клику на кнопку поменяйте местами первую и вторую колонки таблицы.</p>
+<hr>
+<div class="container" id="container">
+</div>
+<button class="btn" id="btn">Click</button>
+<button class="btn" id="btn1">Click</button>
+<script>
+let arr=[];
+
+const container=document.querySelector('.container');
+let
+table=document.createElement("table");
+for(let i=0;i<=8;i++){
+let tr=document.createElement("tr");
+for(let j=0;j<=8;j++){
+let td=document.createElement("td");
+arr.push(td)
+td.innerHTML=arr.length
+tr.appendChild(td);
+}
+table.appendChild(tr)
+}
+container.appendChild(table);
+
+
+function swapRow(){
+const rows=table.getElementsByTagName("tr");
+for(let n=0;n<rows[0].cells.length;n++){
+let temp=rows[0].cells[n].innerHTML;
+rows[0].cells[n].innerHTML=rows[1].cells[n].innerHTML;
+rows[1].cells[n].innerHTML=temp
+}
+}
+
+function swapColl(){
+const rows=table.getElementsByTagName("tr");
+for(let n=0;n<rows.length;n++){
+const cells=rows[n].cells;
+
+let temp=cells[0].innerHTML;
+cells[0].innerHTML=cells[1].innerHTML;
+cells[1].innerHTML=temp
+}
+}
+
+
+
+document.getElementById("btn").addEventListener("click",()=>{
+swapRow()
+})
+document.getElementById("btn1").addEventListener("click",()=>{
+swapColl()
+})
+</script>
+<style>
+
+td{
+width:40px;
+border:1px solid gray;
+}
+tr{
+height:30px;
+}
+table{
+border:1px solid gray;
+border-collapse:collapse;
+}
+.red{
+border:1px solid red;
+}
+.saveBtn{
+background-color:orange;
+}
+.hiden{
+display:none;
+}
+
+
+</style>
+  </body>
+</html>

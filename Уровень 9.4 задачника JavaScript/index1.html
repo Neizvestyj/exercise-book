@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">
+Дана таблица. По нажатию на кнопку добавьте в эту таблицу и новый ряд, и новую колонку.
+Дана таблица. Сделайте так, чтобы по клику на любую ячейку в ней появлялся инпут для редактирования этой ячейки.
+</p>
+<hr>
+<div class="container" id="container">
+
+<ul id="ul">
+</ul>
+</div>
+<button class="btn" id="btn">Row</button>
+<button class="btn" id="btn2">Coll</button>
+<p id="result"></p>
+<script>
+
+let row=3
+let col=3
+
+const container=document.querySelector('.container');
+
+document.getElementById("btn").addEventListener("click",()=>{
+row++
+build(row,col)
+})
+
+document.getElementById("btn2").addEventListener("click",()=>{
+col++
+build(row,col)
+})
+
+
+
+function build(row,col){
+let remCeils=container.querySelector("table");
+if(remCeils){
+container.removeChild(remCeils)
+}
+let
+table=document.createElement("table");
+for(let i=0;i<row;i++){
+let tr=document.createElement("tr");
+table.appendChild(tr);
+for(let j=0;j<col;j++){
+let td=document.createElement("td");
+td.innerHTML=j+" "+i
+tr.appendChild(td)
+}
+}
+container.append(table)
+}
+
+function red(){
+let ceil=document.querySelectorAll("td");
+ceil.forEach(item=>{
+item.addEventListener("click",(event)=>{
+if(!item.querySelector("input")){
+let input=document.createElement("input");
+let button=document.createElement("button");
+button.innerHTML="Save";
+button.classList.add("saveBtn");
+
+item.append(input,button);
+event.preventDefault();
+button.addEventListener("click",(event)=>{
+let inputVal=input.value;
+item.removeChild(input)
+item.removeChild(button)
+item.textContent=inputVal
+})
+}
+})
+})
+}
+
+
+
+build(row,col)
+red()
+
+</script>
+<style>
+td{
+width:40px;
+border:1px solid gray;
+}
+tr{
+height:40px;
+}
+table{
+border:1px solid gray;
+border-collapse:collapse;
+}
+.red{
+border:1px solid red;
+}
+.saveBtn{
+background-color:orange;
+}
+</style>
+  </body>
+</html>

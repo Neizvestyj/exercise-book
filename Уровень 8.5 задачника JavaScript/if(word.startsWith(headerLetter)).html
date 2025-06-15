@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p id="p">Дан, массив, со, словами, Выведите, слова, начинающиеся, на, одинаковые, буквы, в, своем, отдельном, списке, ul, Над, каждым, списком, сделайте, h2, с, названием, буквы, для, которой, сделан, список,
+</p>
+<ul id="ul">
+<h2>б</h2>
+<li></li>
+
+<h2>в</h2>
+<li></li>
+
+<h2>г</h2>
+<li></li>
+<h2>д</h2>
+<li></li>
+ 
+<h2>о</h2>
+<li></li>
+
+<h2>с</h2>
+<li></li>
+
+<h2>н</h2>
+<li></li>
+</ul>
+<button class="btn" id="btn">Click</button>
+</div>
+</fieldset>
+
+<script>
+
+let arr=document.getElementById("p").innerHTML.split(", ");
+let ul=document.getElementById("ul");
+let h=[...ul.querySelectorAll("h2")];
+
+document.getElementById("btn").addEventListener("click",()=>{
+
+h.forEach(header=>{ 
+let headerLetter=header.innerHTML;
+
+arr.forEach(word=>{
+if(word.startsWith(headerLetter)){
+
+let li=header.nextElementSibling;
+li.innerHTML+=word+" "
+}
+})
+})
+
+
+})
+
+</script>
+  </body>
+</html>

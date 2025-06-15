@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Всем ссылкам, ведующим на чужой сайт, добавьте target="_blank".
+
+</p>
+<hr>
+<div id="container">
+<a href="#">Ссылка 1</a>
+<hr>
+<a href="#">Ссылка 2</a>
+<hr>
+<a href="#">Ссылка 3</a>
+<hr>
+</div>
+
+<p id="result"></p>
+<script>
+let links=document.querySelectorAll("a")
+for(let i=0;i<links.length;i++){
+const htef=links[i].getAttribute("href")
+
+if(href&&!href.includes(window.location.hostname)){
+links[i]settAtribute("target","_blank");
+links[i].settAtribute("rel","noopener noreferrer")
+}
+}
+
+docoment.getElementById("result").innerText=`Обработано ${links.length} ссылок`
+
+
+</script>
+<style>
+
+</style>
+  </body>
+</html>

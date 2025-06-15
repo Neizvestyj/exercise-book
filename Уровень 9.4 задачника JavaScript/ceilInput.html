@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">
+</p>
+<hr>
+<div class="container" id="container">
+
+<ul id="ul">
+</ul>
+</div>
+
+
+<p id="result"></p>
+<script>
+
+const container=document.querySelector('.container');
+let
+table=document.createElement("table");
+
+for(let i=0;i<6;i++){
+let tr=document.createElement("tr");
+table.appendChild(tr);
+for(let j=0;j<6;j++){
+let td=document.createElement("td");
+td.innerHTML=j+" "+i
+tr.appendChild(td)
+}
+}
+container.append(table);
+
+function red(){
+let ceil=document.querySelectorAll("td");
+ceil.forEach(item=>{
+item.addEventListener("click",(event)=>{
+
+if(!item.querySelector("input")){
+let input=document.createElement("input");
+let button=document.createElement("button");
+button.innerHTML="Save";
+button.classList.add("saveBtn");
+
+let btnDel=document.createElement("button");
+btnDel.innerHTML="Close";
+btnDel.classList.add("saveBtn");
+
+item.append(input,button,btnDel);
+event.preventDefault();
+
+button.addEventListener("click",(event)=>{
+let inputVal=input.value;
+
+item.textContent=inputVal
+})
+btnDel.addEventListener("click",(event)=>{
+button.classList.add("hiden")
+item.removeChild(btnDel)
+input.classList.add("hiden")
+
+})
+}
+})
+})
+}
+red()
+
+
+
+</script>
+<style>
+
+td{
+width:40px;
+border:1px solid gray;
+}
+tr{
+height:40px;
+}
+table{
+border:1px solid gray;
+border-collapse:collapse;
+}
+.red{
+border:1px solid red;
+}
+.saveBtn{
+background-color:orange;
+}
+.hiden{
+display:none;
+}
+
+</style>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style2.css">    
+  </head>
+  <body>
+<style>
+body{
+background-color:grey;
+}
+td{
+width:38px; 
+height:38px; 
+}
+
+</style>
+
+
+<div class="container">
+<p>Сделайте вручную HTML таблицу 8 на 8. По нажатию на кнопку покрасьте каждую четную ячейку в белый цвет, а нечетную - в черный.</p>
+
+</div>
+
+<button type="button" class="btn" id="btn">Click</button>
+
+
+<script>
+let cells=[];
+
+let tr;
+let td;
+let 
+table=document.createElement("table");
+for(let i=0;i<8;i++){
+tr=document.createElement("tr");
+table.appendChild(tr);
+for(let j=0;j<8;j++){
+td=document.createElement("td");
+tr.appendChild(td)
+td.style.border="1px solid black";
+cells.push(td)
+
+}
+}
+document.getElementsByTagName("div")[0].append(table);
+table.style.border="1px solid black";
+
+
+function color(cells){
+
+for (let i=0;i<64;i++){
+
+if((i+Math.floor(i/8))%2===0){ 
+cells[i].style.backgroundColor="white"
+}else{cells[i].style.backgroundColor="black"}
+}
+}
+document.getElementById("btn").addEventListener("click",()=>{
+color(cells)
+})
+
+
+
+
+
+
+
+</script>
+  </body>
+</html>

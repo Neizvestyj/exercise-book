@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Даны два инпута и кнопка. В инпуты вводятся числа. По клику на кнопку, проверьте, являются ли эти числа дружественными или нет.</p>
+<hr>
+<div id="container">
+<input class="input" id="input1" type="number" placeholder="input1">
+
+<input class="input" id="input2" type="number" placeholder="input2">
+
+<button class="btn"id="btn">Click</button>
+</div>
+
+<ul id="ul"></ul>
+<script>
+let ul=document.getElementById("ul");
+
+document.getElementById("btn").addEventListener("click",()=>{
+
+let inputVal1=parseInt(document.getElementById("input1").value);
+let inputVal2=parseInt(document.getElementById("input2").value);
+
+function numberSum(number){
+let sum=0
+for(let i=1;i<number;i++){
+if(number%i===0){
+sum+=i;
+}
+}
+return sum;
+}
+
+if(numberSum(inputVal1)===inputVal2&&numberSum(inputVal2)===inputVal1){
+let li=document.createElement("li")
+li.innerHTML=`Числа ${inputVal1} и ${inputVal2} являются дружественными`
+ul.append(li);
+}else{
+let li=document.createElement("li")
+li.innerHTML="числа являются не дружественными"
+ul.append(li)
+}
+input1.value="";
+input2.value="";
+
+})
+
+
+
+
+
+
+
+
+</script>
+<style>
+
+</style>
+  </body>
+</html>

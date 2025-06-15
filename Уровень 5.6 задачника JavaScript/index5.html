@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style2.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p>Даны ылки. Сделайте так, чтобы по наведени на лбу ылку над ней повллоь значение ее атрибута href.
+</p>
+<a href="https://example.com" class="tooltip" data-info="Это ылка на пример." title="">Перейти на Example.com</a>
+<a href="https://example.com" class="tooltip" data-info="https://example.com"title="">Перейти на Example.com</a>
+
+
+
+
+</div>
+</fieldset>
+
+<script>
+document.querySelectorAll('.tooltip').forEach(element => {
+       element.addEventListener('mouseover', () => {
+let info = element.getAttribute('data-info');
+element.setAttribute('title', info); // Показываем атрибут
+       });
+
+       element.addEventListener('mouseout', () => {
+           element.removeAttribute('title'); // Убираем атрибут при уходе курсора
+       });
+   });
+
+</script>
+  </body>
+</html>

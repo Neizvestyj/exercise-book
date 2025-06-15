@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p id="p">Дан текстареа и ul. В текстареа вводится текст. Сделайте так, чтобы по нажатию Shift + Enter каждая строка текста добавилась в список в виде отдельного тега li.
+</p>
+<textarea id="textarea" type="text"></textarea>
+<ul id="ul"></ul>
+</div>
+</fieldset>
+
+<script>
+let textarea=document.getElementById("textarea");
+let ul=document.getElementById("ul");
+
+textarea.addEventListener("keydown",(event)=>{
+if(event.shiftKey&&event.key==="Enter"){
+event.preventDefault();
+
+let textVal=textarea.value.trim()
+
+if(textVal){
+let li=document.createElement("li")
+li.textContent=textVal;
+ul.append(li)
+textarea.value=""
+}
+}
+})
+
+</script>
+  </body>
+</html>

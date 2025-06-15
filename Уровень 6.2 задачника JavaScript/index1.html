@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style2.css">    
+  </head>
+  <body>
+<div></div>
+<fieldset>
+<p>По клику на кнопку создайте HTML таблицу с заданной шириной и высотой.
+</p>
+<p>По клику на кнопку создайте HTML таблицу с заданной шириной и высотой так, чтобы в ячейках стояли их порядковые номера.</p>
+<p>По клику на кнопку создайте HTML таблицу с заданной шириной и высотой так, чтобы в ячейках стояли номера их рядов и колонок.</p>
+<p>Дан массив:
+
+[
+	[1, 2, 3],
+	[4, 5, 6],
+	[7, 8, 9],
+]
+По нажатию на кнопку создайте таблицу, заполненную данными из этого массива.
+</p>
+
+<button type="button" class="btn" id="btn">Click</button>
+
+
+
+
+</fieldset>
+
+<script>
+let arr=[[1,2,3],
+         [4,5,6],
+         [7,8,9]];
+/*
+document.getElementById("btn").addEventListener("click",()=>{
+let table;
+let tr;
+let td;
+let count=1;
+table=document.createElement("table");
+for(let i=0;i<3;i++){
+tr=document.createElement("tr");
+table.appendChild(tr);
+
+for(let j=0;j<3;j++){
+td=document.createElement("td");
+tr.appendChild(td)
+td.style.border="1px solid gray"
+//td.innerHTML=`${i},${j}`
+//td.innerHTML=count
+//count++
+
+td.innerHTML=arr[i][j]
+td.innerHTML=arr[i][j]
+td.innerHTML=arr[i][j]
+}
+}
+document.getElementsByTagName("div")[0].append(table)
+table.style.border="1px solid gray"
+})
+*/
+
+
+document.getElementById("btn").addEventListener("click",()=>{
+let table=document.createElement("table");
+table.style.border="1px solid gray"
+arr.forEach(row=>{
+let tr=document.createElement("tr")
+table.appendChild(tr);
+
+row.forEach(cell=>{
+let td=document.createElement("td");
+td.style.border="1px solid gray"
+
+tr.appendChild(td)})})
+document.querySelector("div").appendChild(table)})
+
+
+
+
+</script>
+  </body>
+</html>

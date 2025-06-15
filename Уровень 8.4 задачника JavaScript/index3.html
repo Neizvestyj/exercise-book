@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<div id="div">
+<p>
+Дана кнопка и блок с текстом. Текст по высоте не влазит в блок и скрыт. По клику на кнопку распахните блок на всю высоту.
+Дана кнопка и блок с текстом. Текст по высоте не влазит в блок и скрыт. По клику на кнопку распахните блок на всю высоту.
+</p>
+</div>
+
+<button type="button" class="btn" id="btn">Click</button>
+<script>
+let p=document.getElementById("div")
+document.getElementById("btn").addEventListener("click",()=>{
+div.style.height="50vh"
+div.style.transition="height 2s  ease"
+//div.style.overflow="auto"
+
+})
+
+
+
+
+
+
+</script>
+<style>
+div{
+color:red;
+border:1px solid;
+height:50px;
+}
+.container{
+display:flex;
+flex-direction:column;
+gap:10px;
+
+
+}
+.item{
+display:flex;
+align-items:center;
+}
+input[type="checkbox"]{
+margin-right:10px;
+}
+</style>
+  </body>
+</html>

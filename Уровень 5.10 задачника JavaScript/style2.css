@@ -1,0 +1,34 @@
+.blue{
+color:blue;
+}
+.red{
+color:red;
+}
+.green{
+color:green;
+}
+
+/* Основные стили для кнопки */
+.btn {
+    padding: 10px 20px;          /* Отступы внутри кнопки */
+    background-color: #4CAF50;  /* Основной цвет фона */
+    color: white;                /* Цвет текста */
+    border: none;                /* Убираем рамку */
+    border-radius: 5px;         /* Закругленные углы */
+    font-size: 16px;             /* Размер шрифта */
+    cursor: pointer;             /* Указатель при наведении */
+    transition: background-color 0.3s ease, transform 0.2s; /* Плавные переходы */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+/* Эффект при наведении */
+.btn:hover {
+    background-color: #45a049;   /* Изменяем цвет фона */
+    transform: scale(1.05);      /* Увеличение кнопки */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Более выраженная тень при наведении */
+}
+
+/* Эффект при нажатии */
+.btn:active {
+    transform: scale(0.95);       /* Немного уменьшение кнопки при нажатии */
+}

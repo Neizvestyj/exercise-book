@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style2.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p>Даны чекбоксы, с помощью которых у юзера спрашиваются языки, которые он знает. Дан также абзац. По мере выбора чекбоксов юзером выводите в абзац выбранные языки через запятую.
+</p>
+<div><ul id="ul">
+
+<li><input type="checkbox" id="js" value="Java Script" class="hamburger-input">
+<label for="js">Java Script</label></li>
+<li><input type="checkbox" id="Java" value="Java" class="hamburger-input">
+<label for="Java">Java</label></li>
+<li><input type="checkbox" id="PHP" value="PHP" class="hamburger-input">
+<label for="PHP">PHP</label></li>
+<li><input type="checkbox" id="Python" value="Python" class="hamburger-input">
+<label for="Python">Python</label></li>
+<li><input type="checkbox" id="C#" value="C#" class="hamburger-input">
+<label for="C#">C#</label></li>
+<li><input type="checkbox" id="C++" value="C++" class="hamburger-input">
+<label for="C">C++</label></li>
+<li><input type="checkbox" id="GO" value="GO" class="hamburger-input">
+<label for="GO">GO</label></li>
+</ul></div>
+
+<p id="result"></p>
+</div>
+</fieldset>
+
+<script>
+let checkBoxses=document.querySelectorAll(".hamburger-input");
+let result=document.getElementById("result")
+
+checkBoxses.forEach(checkbox=>{
+checkbox.addEventListener("change",()=>{
+
+let checkVal=[...document.querySelectorAll("input[type='checkbox']:checked")].map(checkbox=>checkbox.value)
+
+result.textContent=checkVal.join(", ")
+
+})
+})
+
+
+</script>
+  </body>
+</html>

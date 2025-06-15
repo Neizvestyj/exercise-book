@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Даны два селекта. В первом селекте выводятся страны. Сделайте так, чтобы во втором селекте выводились города выбранной страны.</p>
+<hr>
+<div id="container">
+<select id="select">
+<option value="0">Россия</option>
+<option value="1">США</option>
+<option value="2">Белорусь</option>
+</select>
+<select id="city"></select>
+</div>
+
+<ul id="ul"></ul>
+<script>
+
+let countrys = {
+'Россия': ['Москва','Санкт-Петербург','Уфа','Белорецк'], 
+'США': ['New York','LosAngeles', 
+'Chicago'], 
+'Белорусь':['Минск','Гомель',"Витебск"]
+}
+let select=document.getElementById("select");
+select.addEventListener("change",()=>{
+change(select.value)
+})
+
+
+function change(index){
+let selectCity=document.getElementById("city");
+selectCity.innerHTML="";
+
+let selectedCountry=Object.keys(countrys)[index]
+let citis=countrys[selectedCountry]
+
+for(let citi of citis){
+let option=document.createElement("option");
+option.innerHTML=citi;
+selectCity.append(option)
+}
+
+  
+}
+change(0)
+alert("h")
+</script>
+<style>
+
+</style>
+  </body>
+</html>

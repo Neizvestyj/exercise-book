@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">
+Дан текст со словами. Перемешайте все слова этого текста в случайном порядке.</p>
+
+
+<hr>
+<p id="result"></p>
+<button class="btn" id="btn">Расчитать</button>
+<script>
+let p=document.getElementById("p")
+let text=p.innerHTML.split(" ")
+
+let result = document.getElementById("result");
+
+function shuffle(arr){
+
+for(let i=arr.length-1;i>0;i--){
+let j=Math.floor(Math.random()*(i+1));
+[arr[j],arr[i]]=[arr[i],arr[j]]
+ }
+
+}
+
+document.getElementById("btn").addEventListener("click",()=>{
+
+shuffle(text)
+
+p.innerHTML=text.join(" ")
+
+
+})
+</script>
+<style>
+
+</style>
+  </body>
+</html>

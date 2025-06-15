@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p>Даны инпуты. В них вводятся числа. Сделайте так, чтобы при потери фокуса в любом из инпутов в нем появлялся квадрат введенного в него числа.</p>
+
+<div id="place">
+<label>число 1</label>
+<input type="text" id="name1">
+</div>
+<div id="place">
+<label>число 2</label>
+<input type="text" id="name2">
+</div>
+
+<button type="button" class="btn" id="btn">Расчитать</button>
+
+<div id="result"></div>
+
+</div>
+</fieldset>
+
+<script>
+document.querySelectorAll("input").forEach(input=>{
+input.addEventListener("blur",()=>{
+let number=parseInt(input.value);
+if(!isNaN(number)){
+input.value=number*number
+}else{input.value=""}
+})
+})
+
+
+
+
+</script>
+  </body>
+</html>

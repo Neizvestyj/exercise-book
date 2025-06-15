@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+
+<fieldset>
+<p id="place">
+<p div="p">На странице через абсолютное позиционирование расположены дивы, могущие накладываться друг на друга. По клику на любой див сделайте так, чтобы он стал поверх остальных.</p>
+</div>
+<button id="btn">tab</button>
+</fieldset>
+<div class=" div g">item 1</div>
+<div  class="div b">item 2</div>
+<div class="div r">item 3</div>
+
+
+
+
+<script>
+let divs=document.querySelectorAll("div")
+let currentIndex=0;
+
+divs.forEach(item=>{
+item.addEventListener("click",(event)=>{
+ divs.forEach(div=>div.classList.remove("zIndex"))
+
+event.currentTarget.classList.add("zIndex")
+})
+})
+
+function change(){
+divs.forEach(item=>
+item.classList.remove("zIndex"));
+
+divs[currentIndex].classList.add("zIndex");
+currentIndex=(currentIndex+1)%divs.length
+
+
+}
+document.getElementById("btn").addEventListener("click",()=>{
+
+setInterval(change,100)
+})
+
+
+
+</script>
+<style>
+div{ 
+width:150px;
+height:150px;
+border:1px solid white;
+position:absolute;
+}
+.g{
+background-color:green;
+position:absolute;
+left:85px;
+}
+.b{
+background-color:blue;
+position:absolute;
+left:85px;
+top:235px;
+}
+.r{
+background-color:red;
+}
+.zIndex{
+z-index:100;
+}
+</style>
+  </body>
+</html>

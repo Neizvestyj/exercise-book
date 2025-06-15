@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">
+Дана таблица. По очереди выведите в нее все фигурки тетриса так, чтобы начало фигуры было в центре таблицы.
+</p>
+
+
+<hr>
+<p class="container"></p>
+<button class="btn" id="btn">Расчитать</button>
+<script>
+
+
+let arr=[];
+
+const container=document.querySelector('.container');
+let
+table=document.createElement("table");
+for(let i=0;i<=8;i++){
+let tr=document.createElement("tr");
+for(let j=0;j<=8;j++){
+let td=document.createElement("td");
+arr.push(td);
+
+tr.appendChild(td);
+td.innerHTML=arr.length
+}
+table.appendChild(tr)
+
+}
+container.appendChild(table);
+
+
+let cells={...arr}
+
+function rows(x){
+let n=0;
+if(n===0){
+cells[x].style.backgroundColor="red";
+cells[x+1].style.backgroundColor="red";
+cells[x+2].style.backgroundColor="red";
+}else{
+cells[x-8].style.backgroundColor="red";
+}
+}
+rows(39)
+
+
+function w(x){
+cells[x].style.backgroundColor="red";
+cells[x+1].style.backgroundColor="red";
+cells[x+2].style.backgroundColor="red";
+cells[x-8].style.backgroundColor="red"}
+w(20)
+
+function L(x){
+cells[x-18].style.backgroundColor="red"
+cells[x-9].style.backgroundColor="red"
+cells[x].style.backgroundColor="red";
+cells[x+1].style.backgroundColor="red";
+cells[x].style.backgroundColor="red";}
+L(61)
+
+function T(x){
+cells[x].style.backgroundColor="red";
+cells[x+1].style.backgroundColor="red";
+cells[x+2].style.backgroundColor="red";
+cells[x+10].style.backgroundColor="red";
+cells[x+19].style.backgroundColor="red";
+}
+T(57)
+
+function quatro(x){
+cells[x].style.backgroundColor="red";
+cells[x+1].style.backgroundColor="red";
+cells[x+9].style.backgroundColor="red";
+cells[x+10].style.backgroundColor="red"}
+quatro(0)
+
+function I(x){
+cells[x].style.backgroundColor="red";
+cells[x+9].style.backgroundColor="red";
+cells[x+18].style.backgroundColor="red";
+cells[x+27].style.backgroundColor="red";
+}
+I(45)
+
+function H(x){
+cells[x].style.backgroundColor="red";
+cells[x+9].style.backgroundColor="red";
+}
+H(8)
+
+</script>
+<style>
+td{
+width:40px;
+border:1px solid gray;
+}
+tr{
+height:30px;
+}
+table{
+border:1px solid gray;
+border-collapse:collapse;
+}
+.red{
+border:1px solid red;
+}
+.saveBtn{
+background-color:orange;
+}
+.hiden{
+display:none;
+}
+</style>
+  </body>
+</html>

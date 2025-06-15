@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Даны два инпута и кнопка. По клику на кнопку выведите список список ul всех простых чисел из промежутка, заданном значениями инпутов.
+</p>
+<hr>
+<div id="container">
+<input id="input" class="input" type="number">
+<input id="input2" class="input" type="number">
+<ul id="ul">
+</ul>
+</div>
+<button class="btn" id="btn">Click</button>
+<p id="result"></p>
+<script>
+let ul=document.getElementById("ul");
+
+document.getElementById("btn").addEventListener("click",()=>{
+let input=document.getElementById("input");
+let inputVal=parseInt(input.value);
+let input2=document.getElementById("input2")
+let inputVal2=parseInt(input2.value);
+
+for(let i=inputVal;i<=inputVal2;i++){
+if(isPrime(i)){
+let li=document.createElement("li")
+li.innerHTML=i;
+ul.append(li)
+}
+}
+input.value="";
+input2.value="";
+})
+
+function isPrime(n){
+for(let i=2;i<=Math.sqrt(n);i++){
+if(n%i===0){
+return false;
+}
+}
+return true;
+}
+
+</script>
+<style>
+
+</style>
+  </body>
+</html>

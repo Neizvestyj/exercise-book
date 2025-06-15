@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p id="p">Дан абзац и кнопка. По нажатию на кнопку найдите сумму чисел от 1 до 100 и запишите результат в абзац.</p>
+<p id="result">Результат</p>
+
+<button type="button" class="btn" id="btn">Расчитать</button>
+</div>
+</fieldset>
+
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+let n=0;
+let text = document.getElementById("result");
+for(let i=0;i<=100;i++){
+n+=i
+}
+/*let n=[0,1,2,3...,100]
+n=reduce((prev,curr)=>{return prev+curr})*/
+
+text.textContent="Результат" + " "+n
+})
+
+
+
+
+</script>
+  </body>
+</html>

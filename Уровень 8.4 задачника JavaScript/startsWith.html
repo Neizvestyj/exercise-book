@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p>Дан список ul и инпут. По мере ввода текста в инпут оставляйте видимыми только те li, текст которых начинается на текст, введенный в инпут.
+</p>
+<ul id="ul">
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>4</li>
+<li>5</li>
+<li>6</li>
+<li>7</li>
+</ul>
+<input id="input">
+</div>
+</fieldset>
+<script>
+
+let ul=document.getElementById("ul");
+let li=[...ul.querySelectorAll("li")];
+
+
+document.getElementById("input").addEventListener("input",()=>{
+let inputArr=document.getElementById("input").value;
+
+li.forEach(item=>{ 
+if
+(item.innerHTML.startsWith(inputArr)||inputArr===""){
+item.style.display=""
+}else{
+item.style.display="none"}
+
+})
+
+})
+
+</script>
+  </body>
+</html>

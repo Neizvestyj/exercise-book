@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<div id="p" class="slide-down">
+Сделайте блок, который будет выезжать сверху экрана по нажатию на кнопку.</div>
+
+<button class="btn" id="btn">Click</button>
+
+
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+
+let p=document.getElementById("p");
+//p.classList.remove()
+p.classList.toggle("show")
+})
+
+</script>
+<style>
+.slide-down{
+transition:all 0.5s ease;
+transform:translateY(-110%);
+opasity:0;
+overflow:hidden;
+}
+.show{
+transform:translateY(0);
+opacity:1;
+}
+
+
+</style>
+  </body>
+</html>

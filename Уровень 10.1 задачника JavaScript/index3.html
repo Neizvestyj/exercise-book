@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">
+Дан текст со знаками препинаний:
+
+'aaa bbb, ccc. Xxx - 
+	eee bbb, kkk!' 
+Получите массив слов из такого текста.</p>
+<hr>
+<div class="container" id="container">
+</div>
+<button class="btn" id="btn">Click</button>
+
+<p id="result"></p>
+<script>
+let result=document.getElementById("result")
+let text='aaa bbb, ccc. Xxx - eee bbb, kkk!';
+
+document.getElementById("btn").addEventListener("click",()=>{
+//let arr=text.split(/[\s,.\-!]+/);
+let arr = text.match(/\b\w+\b/g);
+alert(arr)
+result.innerHTML=arr.join(", ")
+
+})
+
+</script>
+<style>
+
+td{
+width:40px;
+border:1px solid gray;
+}
+tr{
+height:30px;
+}
+table{
+border:1px solid gray;
+border-collapse:collapse;
+}
+.red{
+border:1px solid red;
+}
+.saveBtn{
+background-color:orange;
+}
+.hiden{
+display:none;
+}
+
+
+</style>
+  </body>
+</html>

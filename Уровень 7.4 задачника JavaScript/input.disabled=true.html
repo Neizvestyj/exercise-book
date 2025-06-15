@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<input type="text" id="input">
+
+<button type="button" class="btn" id="btn">Click</button>
+<div>
+<ul id="result"></ul>
+</div>
+
+</div>
+</fieldset>
+<p id="p">Дан инпут. В него вводится текст. Сделайте так, чтобы в инпут нельзя было ввести больше десяти символов. При превышении количества, символы просто не должны вводиться.</p>
+
+<script>
+let result=document.getElementById("result");
+document.getElementById("input").addEventListener("input",(event)=>{
+let arr=[]
+ arr = event.target.value.split(" ");
+
+//arr=value.split(/,\s*/);
+
+arr=arr.filter(item=>item.length>0)
+result.textContent=arr.length
+if(arr.length>3){
+//input.readOnly=true
+input.disabled=true;
+result.textContent="Ввод отключен"
+
+}
+}) 
+
+
+
+
+
+</script>
+  </body>
+</html>

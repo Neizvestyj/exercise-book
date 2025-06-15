@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p>Даны теги li с числами, инпут и кнопка. По нажатию на кнопку найдите сумму чисел и выведите их в инпут.
+</p>
+<p>Даны теги li с числами и кнопка. По нажатию на кнопку увеличьте все числа в тегах li на единицу.</p>
+<p>Дан инпут, абзац и кнопка. В инпут вводится число. По нажатию на кнопку получите массив делителей числа и выведите их в абзац через запятую.</p>
+<p>Даны два инпута и кнопка. В инпуты вводятся числа. По нажатию на кнопку получите массив общих делителей этих чисел и выведите его в консоль.</p>
+<p>Дан инпут и кнопка. В инпут через запятую вводятся числа. По нажатию на кнопку проверьте, есть ли среди введенных число 13.</p>
+<div id="place">
+<label>число 1</label>
+<input type="text" id="name1">
+</div>
+
+<button type="button" class="btn" id="btn">Расчитать</button>
+<div id="result"></div>
+
+</div>
+</fieldset>
+
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+number = 13;
+
+const number1=document.getElementById("name1").value.split(",").map(Number)
+
+let results=number1.filter(num=>number===num);
+
+let result=document.getElementById("result");
+if(results==13){
+result.textContent="Есть число "+results + " среди введеных чисел "+ number1}else{
+"Нет числа 13 "}
+}) 
+
+</script>
+  </body>
+</html>

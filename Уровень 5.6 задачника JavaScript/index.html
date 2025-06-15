@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p>Дан инпут, кнопка и абзац. В инпут вводится год. По нажатию на кнопку определите, введен високосный год или нет и выведите информацию об этом в абзац.
+</p>
+<div id="place">
+<label>число 1</label>
+<input type="text" id="name1">
+</div>
+
+<button type="button" class="btn" id="btn">Расчитать</button>
+<div id="result"></div>
+
+</div>
+</fieldset>
+
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+const year=parseInt(document.getElementById("name1").value);
+function proverka(year){
+
+/*if(year%4===0){
+if(year%100===0){
+if(year%400===0){
+return "Високосный"; }
+return "Не високосный год";}
+return "високосный";}
+return "Не високосный год";*/
+
+const date= new Date(year,1,29);
+return date.getMonth()===1
+
+}
+
+let text=document.getElementById("result");
+text.textContent="Результат"+" год "+`${year }`+" "+`${proverka(year)?'високосный':'не високосный'}` 
+
+
+}) 
+
+
+
+
+</script>
+  </body>
+</html>

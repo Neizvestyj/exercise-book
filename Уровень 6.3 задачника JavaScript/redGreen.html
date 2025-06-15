@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style2.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p id="p">Дан абзац и кнопка. Пусть первое нажатие на кнопку красит абзац в красный цвет, а второе нажатие в зеленый.
+</p>
+<button type="button" class="btn" id="btn">Расчитать</button>
+</div>
+</fieldset>
+
+<script>
+let counter=0
+document.getElementById("btn").addEventListener("click",()=>{
+let p=document.getElementById("p")
+counter++
+/*if(counter%2===0){
+p.classList.remove("green")
+p.classList.add("red");
+}else{
+p.classList.add("green");
+}counter++*/ 
+
+p.classList.toggle("red",counter%2===1);
+p.classList.toggle("green",counter%2===0);
+
+})
+
+
+
+
+</script>
+  </body>
+</html>

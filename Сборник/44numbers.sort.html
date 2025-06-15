@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Дана таблица, заполненная числами по порядку и кнопка. По нажатию на кнопку перемешайте числа в таблице.
+</p>
+<hr>
+<div class="container" id="container">
+
+<table>
+ <thead>
+  <tr>
+<th>Имя</th>
+<th>Возраст</th>
+<th>Город</th>
+  </tr>
+ </thead>
+
+ <tbody>
+  <tr>
+<td>Алина</td>
+<td>34</td>
+<td>Санкт-Петербург</td>
+  </tr>
+  <tr>
+<td>Сергей</td>
+<td>27</td>
+<td>Москва</td>
+  </tr>
+<tr>
+<td>Владлен</td>
+<td>26</td>
+<td>Уфа</td>
+  </tr>
+
+ </tbody>
+</table>
+
+<button class="btn"id="btn">Click</button>
+</div>
+<script>
+function sortTable(){
+const table=document.querySelector("tbody");
+const cells=Array.from(table.querySelectorAll("td"));
+const numbers=cells.map(cell=>cell.innerHTML);
+numbers.sort((a,b)=>Math.random()-0.5);
+cells.forEach((cell,index)=>{
+cell.innerHTML=numbers[index]
+})
+}
+document.getElementById("btn").addEventListener("click",()=>{
+sortTable()
+})
+</script>
+
+
+
+
+
+
+<style>
+
+td{
+width:100px;
+border:1px solid gray;
+}
+tr{
+height:30px;
+}
+table{
+border:1px solid gray;
+border-collapse:collapse;
+}
+.red{
+border:1px solid red;
+}
+.saveBtn{
+background-color:orange;
+}
+.hiden{
+display:none;
+}
+
+
+</style>
+  </body>
+</html>

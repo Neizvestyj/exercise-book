@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<div class="moon">&#9790;</div>
+
+<h1>Заметки</h2>
+
+
+<input class="name1" type="text" id="input" placeholder="Введите заметку">
+
+<div>
+<button type="button" class="btn" id="btn">Добавить </button>
+</div>
+
+<div><ul id="ul">
+</ul></div>
+
+<script>
+function render(){
+document.getElementById("btn").addEventListener("click",(e)=>{
+let text=document.getElementById("input").value;
+let ul=document.getElementById("ul");
+let li=document.createElement("li");
+if(text.trim()==="") return;
+let span=document.createElement("span");
+span.textContent=text;
+
+let btn=document.createElement("button")
+btn.innerHTML="&#10003";
+btn.classList.add("btnY");
+btn.addEventListener("click",(e)=>{
+span.classList.toggle("complited");
+
+if(span.classList.contains("complited")){
+btn.classList.add("completed")
+}else{
+btn.classList.remove("completed")
+}
+})
+let btnDel=document.createElement("button")
+btnDel.innerHTML="&#10060;";
+btnDel.classList.add("btnDel");
+btnDel.addEventListener("click",(e)=>{
+ul.removeChild(li)
+})
+
+li.append(span);
+li.append(btn)
+li.append(btnDel)
+ul.append(li);
+input.value=""
+})
+}
+render();
+let moon=document.getElementsByClassName("moon")[0]
+moon.addEventListener("click",()=>{
+moon.classList.toggle("moon2");
+document.body.classList.toggle("light")
+})
+
+
+
+</script>
+  </body>
+</html>

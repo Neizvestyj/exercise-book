@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style2.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p>Дана кнопка и список ul, заполненный числами. По клику на кнопку удалите пункт списка, содержащий самое максимальное число.
+</p>
+<p id="test"></p>
+
+
+
+<div><ul id="ul">
+<li>1</li>
+<li>10</li>
+<li>120</li>
+<li>100</li>
+<li>77</li>
+<li>42</li>
+<li>64</li>
+</ul></div>
+
+<button type="button" class="btn" id="btn">Click</button>
+</div>
+</fieldset>
+
+<script>
+function findMaxIndex(arr){
+const maxValue=Math.max(...arr)
+return arr.indexOf(maxValue)
+}
+
+document.getElementById("btn").addEventListener("click",()=>{
+let ul=document.getElementById("ul");
+let li=ul.querySelectorAll("li");
+let arr=[];
+
+li.forEach((item)=>{
+arr.push(parseInt(item.innerText))
+
+})
+let index=findMaxIndex(arr)
+li[index].remove()
+
+
+})
+
+
+
+</script>
+  </body>
+</html>

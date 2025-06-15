@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p id="p">Дано меню со ссылками. Покрасьте в красный цвет ту ссылку, адрес которой совпадает с URL из адресной строки браузера.
+</p>
+<ul id="ul">
+<li><a href="http://localhost:9898/Local/%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%BD%D0%B8%D0%BA/input8.6/index.html?9B533A89-E3BD-46BC-B658-DA1265F1D01E">ссылка 1</a>сылка 1.1</li>
+<li><a href="http://localhost:9898/Local/%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%BD%D0%B8%D0%BA/input8.6/index.html?EE544740-6BED-4D3C-AEBC-1A9D8F54223A">ссылка 2</a>сылка2.2</li>
+<li><a href="http://localhost:9898/Local/%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%BD%D0%B8%D0%BA/input8.6/index.html?EE544740-6BED-4D3C-AEBC-1A9D8F54223A">ссылка 3</a></li>
+<li><a href="#">ссылка 4</a></li>
+<li><a href="#">ссылка 5</a></li>
+<li><a href="#">ссылка 6</a></li>
+</ul>
+
+<button class="btn" id="btn">Click</button>
+</div>
+</fieldset>
+
+<script>
+let currentUrl=window.location.href
+
+let links=document.querySelectorAll("#ul a")
+document.getElementById("btn").addEventListener("click",()=>{
+
+links.forEach(link=>{
+let href=link.getAttribute("href");
+
+if(href===currentUrl){
+link.classList.add("red");
+link.style.backgroundColor="red"
+link.style.color="red"
+alert("проверка ")
+}
+
+})
+})
+
+
+</script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+
+<button type="button" class="btn" id="btn">Click</button>
+<div>
+<ul id="result"></ul>
+</div>
+
+</div>
+</fieldset>
+<p>Дан абзац и кнопка. По клику на кнопку выведите в абзац название дня недели последнего дня текущего месяца.</p>
+
+<script>
+let dayOfweek= ["вс","пн","вт","ср","чт","пт","сб"];
+
+document.getElementById("btn").addEventListener("click",()=>{
+
+let dateIndex=new Date(2024,11,31).getDay();
+  
+let lastDay=dayOfweek[dateIndex]
+
+let li=document.createElement("li")
+li.textContent=lastDay
+
+document.getElementById("result").appendChild(li)
+}) 
+
+
+
+
+
+</script>
+  </body>
+</html>

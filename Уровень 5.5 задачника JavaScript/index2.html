@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p>Даны два инпута и кнопка. В инпуты вводятся числа. По нажатию на кнопку заполните массив целыми числами от первого введеного числа до последнего.</p>
+<div id="place">
+<label>число 1</label>
+<input type="number" id="name1">
+</div>
+<div><label>число 2</label>
+<input type="number" id="name2"></div>
+
+<button type="button" class="btn" id="btn">Расчитать</button>
+<div id="result"></div>
+
+</div>
+</fieldset>
+
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+const inputName1=parseInt(document.getElementById("name1").value);
+const inputName2=parseInt(document.getElementById("name2").value);
+let n=[];
+for(let i=inputName1;i<=inputName2;i++){
+n.push(i) 
+}
+
+let text=document.getElementById("result");
+text.textContent="Результат" + " "+n.join(",")})
+
+
+
+
+</script>
+  </body>
+</html>

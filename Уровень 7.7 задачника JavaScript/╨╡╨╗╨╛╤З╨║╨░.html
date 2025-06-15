@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p>Напишите программу, которая сформирует следующий массив:
+
+[
+	'1',
+	'12',
+	'123',
+	'1234',
+	'12345',
+]</p>
+<button type="button" class="btn" id="btn1">oneDiv</button>
+
+<div id="oneDiv">
+<p id="result"></p>
+</div>
+
+<script>
+document.getElementById("btn1").addEventListener("click",()=>{
+let result=document.getElementById("result")
+
+let arr=[]
+/*for(let i =1;i<6;i++){  
+  let x=""
+  for(let j=1;j<i;j++){
+    x+=j
+  }
+  arr.push(x)
+}
+alert(arr)
+result.textContent=arr.join("")
+*/
+//или так
+let row
+
+for(let i=0;i<6;i++){
+row=Array(i).fill(i)
+arr.push(row)
+}
+
+result.innerHTML="<pre>"+JSON.stringify(arr,null,2)+"</pre>"
+alert(JSON.stringify(arr))
+})
+
+
+
+
+
+
+
+</script>
+  </body>
+</html>

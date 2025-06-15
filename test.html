@@ -1,0 +1,59 @@
+
+<script>
+
+/*Сделайте функцию, которая параметром будет принимать число и удалять из него четные цифры.*/ 
+
+/*function delNum(num){
+let result=num.toString().split("")
+for(let i=0;i<num;i++){
+if(parseInt(result[i])%2===0){
+result.splice(i,1)
+i--
+
+}
+}
+alert(result.join(""))
+
+}
+delNum(12345678)*/
+
+/*function delNum(num){
+let result=num.toString().split("")
+result= result.filter(i=>parseInt(i)%2!==0)
+alert(result.join(""))
+}
+delNum(1234567)*/
+/*Сделайте функцию, которая заполнит массив N случайными числами из заданного промежутка.*/
+
+let n=[];
+function numbers(a,b){
+for(let i=a;i<b;i++){
+n.push(parseInt(Math.random()*b+a))
+}
+alert(n)
+}
+numbers(2,8)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+

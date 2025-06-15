@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style2.css">    
+  </head>
+  <body>
+<fieldset>
+<div>
+ <p>Дан список ul. Сделайте так, чтобы по клику на любую li она удалялась из списка.</p>
+</div>
+
+<button type="button" class="btn" id="btn">Click</button>
+
+<div><ul id="ul">
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>4</li>
+<li>5</li>
+<li>6</li>
+<li>7</li>
+</ul></div>
+
+</div>
+</fieldset>
+
+<script>
+
+document.getElementById("ul").addEventListener("click",(e)=>{
+if(e.target.tagName==="LI"){
+e.target.remove()
+}
+})
+
+
+
+
+
+</script>
+  </body>
+</html>

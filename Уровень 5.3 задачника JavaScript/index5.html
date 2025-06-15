@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p>Даны пустые абзацы и кнопка. По нажатию на кнопку заполните абзацы числами по порядку.</p>
+
+<button type="button" class="btn" id="btn">Расчитать</button>
+<div class="result" id="result">Результат</div>
+<p id="p1"></p>
+<p id="p2"></p>
+<p id="p3"></p>
+
+</div>
+</fieldset>
+
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+let n=0;
+for(let i=0;i<3;i++){
+n++
+
+let text=document.getElementById(`p${i+1}`);
+text.textContent=+n}})
+
+
+
+
+</script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Дана таблица прямоугольного размера с нечетным количеством рядов и колонок. Дана кнопка. По клику на кнопку выделите каким-нибудь цветом центральную ячейку.</p>
+<button type="button" class="btn" id="btn">Click</button>
+<div id="result"></div>
+
+
+<script>
+let result=document.getElementById("result")
+let arr=[];
+
+let tr;
+let td;
+let 
+table=document.createElement("table");
+for(let i=0;i<7;i++){
+tr=document.createElement("tr");
+table.appendChild(tr);
+for(let j=0;j<7;j++){
+td=document.createElement("td");
+tr.appendChild(td)
+arr.push(td)
+td.style.border="1px solid gray"
+}
+}
+document.getElementsByTagName("div")[0].append(table);
+table.style.border="1px solid gray"
+
+document.getElementById("btn").addEventListener("click",()=>{
+
+arr[24].style.backgroundColor="red"
+
+
+})
+
+
+
+
+
+
+
+</script>
+  </body>
+</html>

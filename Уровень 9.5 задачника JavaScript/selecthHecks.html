@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">
+Дан селект и радио кнопочки, количество радио равно количеству пунктов в селекте. Сделайте так, чтобы при выборе пункта в селекте автоматически становилась отмеченной соответствующая радио кнопочка.
+</p>
+<hr>
+<div id="container">
+<select id="select">
+<option value="0">Java Script</option>
+<option value="1">Python</option>
+<option value="2">Java</option>
+</select>
+
+<div id="container-of-check">
+<div class="item"><input type="checkbox" value="true"><p>Java Script</p>
+</div>
+
+<div class="item"><input type="checkbox"  value="true">
+<p>Python</p>
+</div>
+<div class="item"><input type="checkbox" value="true">
+<p>Java</p>
+</div>
+
+</div>
+</div>
+
+<p id="result"></p>
+<script>
+let select=document.getElementById("select");
+select.addEventListener("change",()=>{
+change(select.value)
+})
+
+function change(index){
+let containerCheks=document.getElementById("container-of-check");
+let checks=containerCheks.querySelectorAll("input[type='checkbox']");
+
+checks.forEach((check,i)=>{
+check.checked=(i==index)
+})
+
+}
+
+</script>
+<style>
+#container{
+dispaly:flex;
+
+}
+</style>
+  </body>
+</html>

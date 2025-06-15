@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p id="p">Даны теги li с числами, инпут и кнопка. По нажатию на кнопку найдите сумму чисел и выведите их в инпут.
+</p>
+<p>Даны теги li с числами и кнопка. По нажатию на кнопку увеличьте все числа в тегах li на единицу.</p>
+<p>Дан инпут, абзац и кнопка. В инпут вводится число. По нажатию на кнопку получите массив делителей числа и выведите их в абзац через запятую.</p>
+<p>Даны абзацы с текстом. Сделайте так, чтобы по нажатию на любой абзац его текст переворачивался.</p>
+<p>В инпут вводится число из 6-ти цифр. По нажатию на кнопку проверьте, равна ли сумма первых трех цифр сумме вторых трех цифр.</p>
+<p>Дан инпут и кнопка. В него вводится число из шести цифр. По клику на кнопку проверьте, что число представляет собой счастливый билет, то есть сумма первых трех цифр равна сумме вторых трех цифр.</p>
+<p>Дан инпут. В него вводится число. Если введено нечетное число, то покрасьте границу инпута в красный цвет, а если четное - то в зеленый.</p>
+
+<div id="place">
+<label>число 1</label>
+<input type="text" id="name1">
+</div>
+
+<button type="button" class="btn" id="btn">Расчитать</button>
+
+<div id="result"></div>
+
+</div>
+</fieldset>
+
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+let number = Number(document.getElementById("name1").value);
+let input=document.getElementById("name1");
+if(number%2===0){
+input.classList.add("green");
+input.classList.remove("red");
+alert("четное")
+}else{
+input.classList.add("red");
+input.classList.remove("green");
+alert("не четное ")
+}
+
+})
+
+
+</script>
+  </body>
+</html>

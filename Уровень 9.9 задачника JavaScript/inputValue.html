@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Даны инпуты. Поставьте первому инпуту в value число 1, через секунду второму число 2, еще через секунду третьему число 3 и так далее пока инпуты не закончатся. Когда инпуты закончатся продолжите нумерацию с первого инпута.</p>
+<hr>
+<div class="container" id="container">
+
+<input class="input" type="number" id="inpu1">
+<input class="input" type="number" id="inpu2">
+<input class="input" type="number" id="inpu3">
+<input class="input" type="number" id="inpu4">
+<input class="input" type="number" id="inpu5">
+</div>
+<script>
+let n=1;
+let index=0;
+let inputs=Array.from(document.querySelectorAll("input"))
+
+
+
+setInterval(()=>{
+if(n<=inputs.length){
+inputs[index].value+=n 
+n++
+index++
+}else{
+index=0
+n=1
+}
+},100)
+
+
+
+</script>
+
+
+<style>
+
+td{
+width:100px;
+border:1px solid gray;
+}
+tr{
+height:30px;
+}
+table{
+border:1px solid gray;
+border-collapse:collapse;
+}
+.red{
+border:1px solid red;
+}
+.saveBtn{
+background-color:orange;
+}
+.hiden{
+display:none;
+}
+
+
+</style>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+
+<hr>
+<div class="container" id="container">
+
+</div>
+
+
+<p id="result"></p>
+<script>
+let result=document.getElementById("result");
+
+let cards=[["&#127163","&#127165","&#127166","&#127153"],["&#127147","&#127149","&#127150","&#127153"],
+["&#127179","&#127181","&#127182","&#127169"],
+["&#127195","&#127197","&#127198","&#127185"]
+]
+let n=cards.flat().sort(()=>Math.random()-0.5).slice(0,6)
+
+result.innerHTML=n.join(" ")
+</script>
+<style>
+#result{
+font-size:130px;
+}
+</style>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<div id="div">
+<p>
+Выведите на экран следующую пирамидку:
+
+1
+333
+55555
+7777777
+999999999
+</p>
+</div>
+<ul id="ul"></ul>
+
+<button type="button" class="btn" id="btn">Click</button>
+<script>
+let ul=document.getElementById("ul")
+
+document.getElementById("btn").addEventListener("click",()=>{
+
+for(let j=1;j<=9;j+=2){
+let li=document.createElement("li")
+li.innerHTML=String(j).repeat(j);
+ul.append(li);
+}
+})
+
+</script>
+<style>
+
+</style>
+  </body>
+</html>

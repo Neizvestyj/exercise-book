@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<button type="button" class="btn" id="btn1">oneDiv</button>
+<button type="button" class="btn" id="btn2">twoDiv</button>
+
+
+<div id="oneDiv">
+<p id="p">Дана кнопка. По клику на кнопку плавно прокрутите окно браузера до самого низа.</p>
+</div>
+<div id="twoDiv">Даны кнопки и дивы. Каждая кнопка соответствует своему диву. Сделайте так, чтобы по первому клику на кнопку открывался ее див, а по второму клику - скрывался.</div>
+
+
+<script>
+document.getElementById("btn1").addEventListener("click",()=>{
+
+let oneDiv=document.getElementById("oneDiv")
+oneDiv.classList.toggle("display")
+})
+
+document.getElementById("btn2").addEventListener("click",()=>{
+let twoDiv=document.getElementById("twoDiv").classList.toggle("display")
+})
+
+
+
+
+
+</script>
+  </body>
+</html>

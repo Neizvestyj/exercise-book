@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p id="p">Дан абзац с числом  2 и кнопка. По нажатию на кнопку возведите текст абзаца в квадрат.</p>
+<p id="p1">Дан абзацы с числами 4 , абзац и кнопка. По нажатию на кнопку найдите сумму значений абзацев и запишите ее в абзац.</p>
+<p id="p3">Результат</p>
+<button type="button" class="btn" id="btn">Расчитать</button>
+</div>
+</fieldset>
+
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+let n=0;
+let text = document.getElementById("p");
+let text2= document.getElementById("p1");
+let result= document.getElementById("p3")
+let match= text.textContent.match(/\d+/);
+let match2=text2.textContent.match(/\d+/);
+
+
+if(match){
+n=parseInt(match[0])+parseInt(match2[0])
+}
+
+
+
+result.textContent="Результат" +" "+n
+
+
+})
+
+
+
+
+</script>
+  </body>
+</html>

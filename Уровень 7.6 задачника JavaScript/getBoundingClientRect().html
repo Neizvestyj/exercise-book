@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<button type="button" class="btn" id="btn1">oneDiv</button>
+<button type="button" class="btn" id="btn1">twoDiv</button>
+
+
+
+<div id="oneDiv">
+<p id="p">Дана кнопка. По клику на кнопку плавно прокрутите окно браузера до самого низа.</p>
+</div>
+<div id="twoDiv">Даны кнопки и дивы. Каждая кнопка соответствует своему диву. Сделайте так, чтобы по первому клику на кнопку открывался ее див, а по второму клику - скрывался.</div>
+
+<p id="result"></p>
+
+
+<script>
+document.getElementById("btn1").addEventListener("click",()=>{
+let arr=[];
+let arr2=[];
+let output="Результат проверки ";
+let allMatch=true;
+let result=document.getElementById("result");
+
+
+let div1=document.getElementById("oneDiv").getBoundingClientRect();
+let div2=document.getElementById("twoDiv").getBoundingClientRect();
+
+
+arr.push(div1.top,div1.bottom)
+arr2.push(div2.top,div2.bottom)
+
+
+
+arr.forEach((item,index)=>{
+if(arr2.includes(item)){
+output+=`Элемент ${item} входит в arr2,\n`
+}else{
+output+=` Элемент ${item} не входит в arr2,`
+allMatch=false;
+}
+});
+
+if(allMatch){
+output+="Блоки находятся на одинаковых координатах"
+}else{
+output+="Блоки находятся на разных координатах"
+}
+result.textContent=output;
+
+})
+
+
+
+
+
+
+
+</script>
+  </body>
+</html>

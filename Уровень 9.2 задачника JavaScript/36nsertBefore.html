@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Дан список ul и кнопка. По нажатию на кнопку перемешайте пункты списка в случайном порядке.
+</p>
+<hr>
+<div id="container">
+<ul id="ul">
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>4</li>
+<li>5</li>
+</ul>
+</div>
+<p id="shuffled"></p>
+<button class="btn" id="btn">Click</button>
+<p id="result"></p>
+<script>
+let free=document.getElementById("shuffled");
+
+
+let ul=document.getElementById("ul");
+let li=Array.from(ul.querySelectorAll("li"));
+
+document.getElementById("btn").addEventListener("click",()=>{
+
+/*li.forEach(function(item){
+let randomIndex=Math.floor(Math.random()*li.length);
+ul.insertBefore(item,ul.children[randomIndex])
+})*/
+
+li.sort(()=>0.5-Math.random());
+ul.innerHTML=''
+li.forEach(li=>{
+ul.append(li)
+})
+})
+free.innerHTML=li.slice(0,4)
+</script>
+<style>
+
+</style>
+  </body>
+</html>

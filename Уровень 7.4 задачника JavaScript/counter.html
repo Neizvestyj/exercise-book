@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<style>
+.red{
+color:red;
+}
+</style>
+
+<p id="p">Дан инпут, абзац и кнопка. В инпут вводится число. По нажатию на кнопку сделайте так, чтобы в абзаце начал тикать обратный отсчет от введенного в инпут числа до нуля.</p>
+<input type="number" id="input">
+<button class="btn" id="btn">start</button>
+<p id="result"></p>
+
+<script>
+let result=document.getElementById("result");
+let number=document.getElementById("input")
+document.getElementById("btn").addEventListener("click",()=>{
+let numbers=parseInt(number.value)
+let count=numbers;
+result.innerHTML=count;
+const interval=setInterval(()=>{
+count--
+result.innerHTML=count
+
+},1000)
+})
+
+
+
+
+</script>
+  </body>
+</html>

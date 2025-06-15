@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p>Выведите на экран следующую пирамидку:
+
+x
+xx
+xxx
+xxxx
+xxxxx</p>
+<button type="button" class="btn" id="btn1">oneDiv</button>
+
+<div id="oneDiv">
+<p id="result"></p>
+</div>
+
+<script>
+document.getElementById("btn1").addEventListener("click",()=>{
+let result=document.getElementById("result")
+
+let arr=[]
+let row
+
+for(let i=0;i<6;i++){
+row=Array(i).fill("x")
+arr.push(row)
+}
+
+result.innerHTML="<pre>"+JSON.stringify(arr,null,2)+"</pre>"
+alert(JSON.stringify(arr))
+
+})
+
+
+
+
+
+
+
+</script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+
+
+
+
+#name1 {
+  //  border: 4px solid gray; /* Исходный цвет границы */
+    padding: 5px; 
+    border-radius: 4px;
+    outline:none;
+}
+
+//#name1:focus { /* Убрали пробел перед "focus" */
+    //border-color:brown; /* Цвет границы при фокусе */
+    //outline: none; /* Убираем стандартное выделение */}
+
+.green{
+border-color:green;
+color:green;
+}
+
+.red{
+border-color:red;
+color:red;
+}

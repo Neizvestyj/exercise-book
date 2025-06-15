@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style2.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p>Дан список ul. По клику на любую li записывайте в конец ее текста порядковый номер клика по этой li.
+</p>
+
+<button type="button" class="btn" id="btn">Click</button>
+
+<div><ul id="ul">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul></div>
+
+</div>
+</fieldset>
+
+<script>
+
+let ul=document.getElementById("ul");
+let li=ul.querySelectorAll("li");
+
+let clickCounts=Array(li.length).fill(0);
+
+li.forEach((item,index)=>{
+item.addEventListener("click",(e)=>{
+clickCounts[index]++
+e.target.textContent+=`(${clickCounts[index]})`
+})
+
+})
+
+
+
+
+
+
+</script>
+  </body>
+</html>

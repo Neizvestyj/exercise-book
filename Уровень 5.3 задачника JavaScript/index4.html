@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p>Дан абзац, инпут и кнопка. В инпут вводится слово. По нажатию на кнопку переверните слово и запишите его в абзац.</p>
+
+<div id="place">
+<label class="result">Введите</label>
+<input type="text" id="name1">
+</div>
+
+<button type="button" class="btn" id="btn">Расчитать</button>
+<div class="result" id="result">Результат</div>
+
+</div>
+</fieldset>
+
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+const inputName1=document.getElementById("name1").value;
+const n=inputName1.split("").reverse().join("")
+
+
+let text=document.getElementById("result");
+text.textContent="Результат:" + " "+n})
+
+
+
+
+</script>
+  </body>
+</html>

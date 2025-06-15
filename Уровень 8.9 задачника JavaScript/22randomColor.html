@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p id="p">Дан абзац со словами и кнопка. По клику на кнопку покрасьте каждое слово в случайный цвет так, чтобы у соседних абзацев были разные цвета.
+</p>
+
+<button class="btn" id="btn">Click</button>
+</div>
+</fieldset>
+
+<script>
+
+let colors=["blue","green","red","yellow","purple","brown","orange"];
+
+function getRandomColor(exColor){
+let randomIndex;
+let color;
+do{
+randomIndex=Math.floor(Math.random()*colors.length);
+color=colors[randomIndex];
+}while(color===exColor);
+return color
+}
+
+let p=document.getElementById("p")
+let text=p.innerHTML.split(" ");
+p.innerHTML=text.map(item=>`<span>${item}</span>`).join(" ");
+
+document.getElementById("btn").addEventListener("click",()=>{
+let lastColor=null;
+document.querySelectorAll("#p span").forEach(item=>{
+const newColor=getRandomColor(lastColor)
+item.style.color=newColor
+lastColor=newColor
+})
+})
+
+</script>
+  </body>
+</html>

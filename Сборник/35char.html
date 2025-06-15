@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Дана некоторая строка:
+
+let str = 'abcde abcde'
+В переменной хранятся символы:
+
+let del = 'abe';
+Удалите из строки все указанные в переменной символы. В нашем случае должно получится следующее:'cd cd'
+</p>
+<hr>
+<div id="container">
+</div>
+<p id="result"></p>
+<script>
+let result=document.getElementById("container");
+let str = 'abcde abcde'
+let del = 'abe';
+
+
+let resultArr=str.split("").filter(char=>!del.includes(char)).join("")
+result.innerHTML=resultArr
+alert(resultArr)
+</script>
+<style>
+
+</style>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+
+<p id="p">Дан инпут, кнопка и абзац. В инпут вводится число. По нажатию на кнопку выведите в абзац строку, состоящую из нулей, количество которых равно числу. Например, при вводе числа 5 у нас должна получится строка '00000'.
+</p>
+<div id="result"></div>
+
+<input class="name1" type="number" id="input" placeholder="Введите заметку">
+
+<button type="button" class="btn" id="btn">Click</button>
+
+</div>
+</fieldset>
+
+<script>
+let result=document.getElementById("result")
+
+document.getElementById("btn").addEventListener("click",()=>{
+let leter="0";
+let input=parseInt(document.getElementById("input").value);
+
+if(isNaN(input)||input<1){result.textContent='Ошибка введите число'}else{
+
+result.textContent=leter.repeat(input)
+}
+}) 
+
+
+
+
+
+</script>
+  </body>
+</html>

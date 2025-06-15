@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">
+Выведите на страницу обратный отсчет дней, часов, минут и секунд, оставшихся до Нового Года.</p>
+
+<hr>
+<p id="result"></p>
+
+<script>
+let result = document.getElementById("result");
+
+let endtime="2025/12/31";
+
+function getTimeRemaining(endtime){
+const total = Date.parse(endtime) - Date.parse(new Date());
+
+const seconds = Math.floor( (total/1000) % 60 );
+
+const minutes = Math.floor( (total/1000/60) % 60 );
+
+const hours = Math.floor( (total/(1000*60*60)) % 24 );
+
+const days = Math.floor( total/(1000*60*60*24) );
+
+  return {
+    total,
+    days,
+    hours,
+    minutes,
+    seconds
+  };
+}
+
+setInterval(()=>{ 
+let r=getTimeRemaining(endtime)
+result.innerHTML=r.days +" дней :"+ r.hours+":"+  r.minutes +":"+ r.seconds;
+},1000)
+
+</script>
+<style>
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #282c34;
+    color: #ffffff;
+    text-align: center;
+    padding: 50px;
+}
+
+🟥 p {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: 1px solid #61dafb;
+    margin: 20px auto;
+    width: 50%;
+}
+
+🟥 result {
+    font-size: 48px;
+    font-weight: bold;
+    color: #61dafb;
+    background-color: rgba(97, 218, 251, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    #p {
+        font-size: 20px;
+    }
+
+    #result {
+        font-size: 36px;
+    }
+}
+
+
+</style>
+  </body>
+</html>

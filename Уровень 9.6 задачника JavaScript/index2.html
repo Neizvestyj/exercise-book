@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">
+Дана таблица. Сделайте так, чтобы по клику на любую ячейку в нее писался ее порядковый номер в таблице.
+</p>
+<hr>
+<div class="container" id="container">
+</div>
+<button class="btn" id="btn">Click</button>
+
+<p id="result"></p>
+<script>
+let arr=[];
+
+const container=document.querySelector('.container');
+let
+table=document.createElement("table");
+
+for(let i=0;i<=8;i++){
+let tr=document.createElement("tr");
+
+for(let j=0;j<=8;j++){
+let td=document.createElement("td");
+arr.push(td)
+//td.innerHTML=arr.length
+tr.appendChild(td)
+
+
+table.appendChild(tr)
+
+arr.forEach((ceil,index)=>{
+ceil.addEventListener("click",(event)=>{
+event.target.innerHTML=index+1
+})
+})
+  }}
+container.appendChild(table);
+</script>
+<style>
+
+td{
+width:40px;
+border:1px solid gray;
+}
+tr{
+height:30px;
+}
+table{
+border:1px solid gray;
+border-collapse:collapse;
+}
+.red{
+border:1px solid red;
+}
+.saveBtn{
+background-color:orange;
+}
+.hiden{
+display:none;
+}
+
+
+</style>
+  </body>
+</html>

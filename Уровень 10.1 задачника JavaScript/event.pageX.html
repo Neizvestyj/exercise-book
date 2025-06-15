@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">
+Сделайте так, чтобы при клике на любое место окна браузера в месте клика появлялся порядковый номер этого клика.</p>
+
+
+
+<script>
+let n=0
+document.body.addEventListener("click",(event)=>{
+n++
+
+let div=document.createElement('div');
+//event.preventDefault()
+div.className="touch";
+div.textContent=n.toString();
+div.style.left=event.pageX+"px";
+div.style.top=event.pageY+"px"
+document.body.append(div)
+
+setTimeout(()=>{
+document.body.removeChild(div)
+
+},2000)
+})
+</script>
+<style>
+body{
+position:relative;
+height:100vh;
+}
+.touch{
+position:absolute;
+}
+
+
+
+</style>
+  </body>
+</html>

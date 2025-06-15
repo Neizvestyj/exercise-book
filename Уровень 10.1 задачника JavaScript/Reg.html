@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">
+Дан инпут. По мере ввода в него числа он должен отделять тройки чисел пробелами.</p>
+<hr>
+<div class="container" id="container">
+<input id="input" type="text">
+</div>
+<button class="btn" id="btn">Click</button>
+
+<p id="result"></p>
+<script>
+let result = document.getElementById("result");
+
+document.getElementById("input").addEventListener("input",()=>{
+
+let input=document.getElementById("input");
+
+let inputVal=input.value.replace(/\s+/g," ")
+
+let formated=inputVal.replace(/\B(?=(\d{3})+(?!\d))/g," ")
+input.value=formated
+
+result.innerHTML=formated
+})
+</script>
+<style>
+
+
+
+</style>
+  </body>
+</html>

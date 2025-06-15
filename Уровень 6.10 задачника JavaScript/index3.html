@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style2.css">    
+  </head>
+  <body>
+<style>
+li{
+list-style-type:none;
+}
+#result{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+li{
+flex:1 0 30%;
+margin:5px;
+box-sizing:border-box;
+}
+</style>
+<fieldset>
+<p>Напишите код, который выведет на экран таблицу умножения.
+</p>
+<div id="result">
+<ul id="ul"></ul>
+</div>
+<button type="button" class="btn" id="btn">Click</button>
+</fieldset>
+<script>
+
+let ul=document.getElementById("ul");
+let n=1
+document.getElementById("btn").addEventListener("click",()=>{
+num()
+n++
+function num(){
+for(let i=1;i<=10;i++){
+let sum=0
+sum=n*i
+ul.innerHTML+=`<li>${n} &#215 ${i} = ${sum}</li>`
+sum=0
+}
+
+}
+
+
+})
+
+
+</script>
+  </body>
+</html>

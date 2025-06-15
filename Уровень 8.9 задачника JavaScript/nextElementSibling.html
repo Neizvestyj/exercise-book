@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="select.css">    
+  </head>
+  <body>
+<p id="p">Дано меню со ссылками. Сделайте так, чтобы по клику на ссылку меню под ней выпадало подменю.
+</p>
+<hr>
+<div id="container">
+</div>
+<nav class="nav">
+<ul>
+ <li>
+ <span class="nav-title">Проект1</span>
+  <ul class="sub-menu hidden">
+   <li><a href="#">Обзор и отзывы</a></li>
+   <li><a href="#">Что такое проекты?</a></li>
+   <li><a href="#">Как подготовиться?</a>
+   </li>
+  </ul>
+ </li>
+<li>
+ <span class="nav-title">Проект2</span>
+  <ul class="sub-menu hidden">
+   <li><a href="#">Обзор и отзывы</a></li>
+   <li><a href="#">Что такое проекты?</a></li>
+   <li><a href="#">Как подготовиться?</a>
+   </li>
+  </ul>
+ </li>
+<li>
+ <span class="nav-title">Проект3</span>
+  <ul class="sub-menu hidden">
+   <li><a href="#">Обзор и отзывы</a></li>
+   <li><a href="#">Что такое проекты?</a></li>
+   <li><a href="#">Как подготовиться?</a>
+   </li>
+  </ul>
+ </li>
+</ul>
+</nav>
+
+<script>
+document.querySelectorAll(".nav-title").forEach(item=>{
+item.addEventListener("click",(event)=>{
+let nextElement=item.nextElementSibling;
+if(nextElement){
+nextElement.classList.toggle("hidden");
+}
+})
+})
+
+
+</script>
+<style>
+
+</style>
+  </body>
+</html>

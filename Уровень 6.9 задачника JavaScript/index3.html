@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style2.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p>Дан абзац и два инпута. В инпуты вводятся даты. Выведите в абзац, сколько дней между введенными датами.</p>
+<div id="place">
+<label>число 1</label>
+<input type="text" id="input1">
+</div>
+<div>
+<label>число 2</label>
+<input type="text" id="input2">
+</div>
+
+<button type="button" class="btn" id="btn">Click</button>
+
+<div><ul id="ul"></ul></div>
+
+</div>
+</fieldset>
+
+<script>
+
+document.getElementById("btn").addEventListener("click",()=>{
+let num1=document.getElementById("input1").value;
+let num2=document.getElementById("input2").value;
+
+let result=Math.abs(Math.ceil((new Date(num1)-new Date(num2))/(1000*3600*24)))
+document.getElementById("ul").textContent=`${result} дня между днями `;
+
+}) 
+
+
+
+
+
+</script>
+  </body>
+</html>

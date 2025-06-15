@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p>Дан массив:
+
+let affairs = [
+	{
+		date:  '2019-12-29',
+		event: 'name1',
+	},
+	{
+		date:  '2019-12-31',
+		event: 'name2',
+	},
+	{
+		date:  '2019-12-29',
+		event: 'name3',
+	},
+	{
+		date:  '2019-12-30',
+		event: 'name4',
+	},
+	{
+		date:  '2019-12-29',
+		event: 'name5',
+	},
+	{
+		date:  '2019-12-31',
+		event: 'name6',
+	},
+	{
+		date:  '2019-12-29',
+		event: 'name7',
+	},
+	{
+		date:  '2019-12-30',
+		event: 'name8',
+	},
+	{
+		date:  '2019-12-30',
+		event: 'name9',
+	},
+]
+Получите из этого массива уникальные даты, то есть вот так:
+
+['2019-12-29', '2019-12-30', 
+	'2019-12-31'] </p>
+<button type="button" class="btn" id="btn1">oneDiv</button>
+
+<div id="oneDiv">
+<p id="result"></p>
+</div>
+
+<script>
+let affairs = [
+	{
+		date:  '2019-12-29',
+		event: 'name1',
+	},
+	{
+		date:  '2019-12-31',
+		event: 'name2',
+	},
+	{
+		date:  '2019-12-29',
+		event: 'name3',
+	},
+	{
+		date:  '2019-12-30',
+		event: 'name4',
+	},
+	{
+		date:  '2019-12-29',
+		event: 'name5',
+	},
+	{
+		date:  '2019-12-31',
+		event: 'name6',
+	},
+	{
+		date:  '2019-12-29',
+		event: 'name7',
+	},
+	{
+		date:  '2019-12-30',
+		event: 'name8',
+	},
+	{
+		date:  '2019-12-30',
+		event: 'name9',
+	},
+]
+
+document.getElementById("btn1").addEventListener("click",()=>{
+let result=document.getElementById("result");
+/*
+let res=[]
+let arr=affairs.map(item=>
+item.date)
+for(let data of arr){
+if(!res.includes(data)){
+res.push(data)
+}
+}
+result.textContent=res
+})
+*/
+let uniDates=[...new Set(affairs.map(item=>item.date))]
+
+result.textContent=uniDates.sort().join(", ")
+
+})
+
+
+
+</script>
+  </body>
+</html>

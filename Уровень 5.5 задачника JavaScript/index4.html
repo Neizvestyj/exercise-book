@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+<fieldset>
+<div id="place">
+<p id="p">Дан абзац, в котором записано число <span id="number">2</span>. По нажатию на кнопку увеличивайте число в абзаце на единицу.
+</p>
+
+<button type="button" class="btn" id="btn">+</button>
+<div id="result"></div>
+
+</div>
+</fieldset>
+
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+
+let p=document.getElementById("number");
+let match= parseInt(p.textContent.match(/\d+/)); 
+let up =()=>{
+match+=1
+p.textContent=match
+}
+
+const interval=setInterval(up,100)
+
+}) 
+
+
+
+
+</script>
+  </body>
+</html>

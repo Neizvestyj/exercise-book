@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<style>
+.red{
+color:red;
+}
+</style>
+
+<p id="p">Дан абзац, содержащий текст со словами. Сделайте так, чтобы по клику на любое слово из этого абзаца, это слово меняло порядок своих букв на обратный.</p>
+<p id="result"></p>
+
+<script>
+
+let p=document.getElementById("p");
+let text=p.innerHTML.split(" ")
+let newHtml=''
+text.forEach(item=>{
+newHtml+=`<span class='word'> ${item}</span>`
+})
+p.innerHTML=newHtml;
+
+let spans=p.querySelectorAll(".word");
+spans.forEach(item=>{
+item.addEventListener("click",(event)=>{
+let word=event.target.innerHTML;
+
+let reverseWord=word.split("").reverse().join("")
+event.target.innerHTML= " "+reverseWord
+})
+})
+
+
+
+</script>
+  </body>
+</html>
