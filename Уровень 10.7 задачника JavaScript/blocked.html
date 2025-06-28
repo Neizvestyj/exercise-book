@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">
+Дана таблица. По клику на любую ячейку эта ячейка выделяется каким-то цветом, активируюясь. Сделайте так, чтобы для активированной ячейки нельзя было активировать ее соседей слева и справа.</p>
+<p>Дана таблица. По клику на любую ячейку эта ячейка выделяется каким-то цветом, активируюясь. Сделайте так, чтобы в для активированной ячейки нельзя было активировать ее соседей сверху и снизу.</p>
+<hr>
+<div class="container" id="container">
+</div>
+<button class="btn" id="btn">Click</button>
+
+<p id="result"></p>
+<script>
+let arr=[];
+
+const container=document.querySelector('.container');
+let
+table=document.createElement("table");
+
+for(let i=0;i<=8;i++){
+let tr=document.createElement("tr");
+
+for(let j=0;j<=8;j++){
+let td=document.createElement("td");
+arr.push(td)
+
+td.dataset.row=i;
+td.dataset.col=j;
+
+td.addEventListener("click",()=>{
+td.style.backgroundColor="red";
+
+function search(r,c){
+if(r>=0&&r<=8&&c>=0&&c<=8){
+table.rows[r].cells[c].classList.add("blocked")
+}
+}
+const row=+td.dataset.row;
+const col=+td.dataset.col;
+
+search(row-1,col)/search(row-1,col-1)
+
+search(row+1,col)
+search(row+1,col+1)
+
+search(row,col-1)
+search(row+1,col-1)
+
+
+search(row,col+1)
+search(row-1,col+1)
+
+})
+
+/*td.addEventListener("click",()=>{
+for(let n=0;n<=8;n++){
+table.rows[n].cells[j].style.backgroundColor="orange";
+}
+})
+*/
+tr.appendChild(td);
+}
+table.appendChild(tr)
+}
+container.appendChild(table);
+</script>
+<style>
+.blocked{
+pointer-events:none;
+}
+
+td{
+width:40px;
+border:1px solid gray;
+}
+tr{
+height:30px;
+}
+table{
+border:1px solid gray;
+border-collapse:collapse;
+}
+.red{
+border:1px solid red;
+}
+.saveBtn{
+background-color:orange;
+}
+.hiden{
+display:none;
+}
+
+
+</style>
+  </body>
+</html>

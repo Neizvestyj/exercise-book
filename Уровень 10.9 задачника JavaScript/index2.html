@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">
+Напишите код, который сгенерирует таблицу, в которой случайным образом будут расставлены корабли для игры в морской бой.
+</p>
+
+
+<hr>
+<p class="container"></p>
+<button class="btn" id="btn">Start</button>
+<script>
+tetris=[39,20,61,57,0,45,8];
+
+document.getElementById("btn").addEventListener("click",()=>{
+
+random=tetris.sort((a,b)=>Math.random()-0.5);
+//for(let i=0;i<=random.length;i++)
+//{
+
+rows(random[0]),
+w(random[1]),
+L(random[2]),
+T(random[3]),
+quatro(random[4]),
+I(random[5]),
+H(random[6])
+//}
+})
+
+let arr=[];
+
+const container=document.querySelector('.container');
+let
+table=document.createElement("table");
+for(let i=0;i<=8;i++){
+let tr=document.createElement("tr");
+for(let j=0;j<=8;j++){
+let td=document.createElement("td");
+arr.push(td);
+tr.appendChild(td);
+td.innerHTML=arr.length
+}
+table.appendChild(tr)
+}
+container.appendChild(table);
+
+
+let cells={...arr};
+let position=[];
+
+function rows(x){
+let n=0;
+if(n===0){
+cells[x].style.backgroundColor="red";
+cells[x+1].style.backgroundColor="red";
+cells[x+2].style.backgroundColor="red";
+}else{
+cells[x-8].style.backgroundColor="red";
+}
+}
+
+
+
+function w(x){
+cells[x].style.backgroundColor="red";
+cells[x+1].style.backgroundColor="red";
+cells[x+2].style.backgroundColor="red";
+cells[x-8].style.backgroundColor="red"}
+
+
+function L(x){
+cells[x-18].style.backgroundColor="red"
+cells[x-9].style.backgroundColor="red"
+cells[x].style.backgroundColor="red";
+cells[x+1].style.backgroundColor="red";
+cells[x].style.backgroundColor="red";}
+
+
+function T(x){
+cells[x].style.backgroundColor="red";
+cells[x+1].style.backgroundColor="red";
+cells[x+2].style.backgroundColor="red";
+cells[x+10].style.backgroundColor="red";
+cells[x+19].style.backgroundColor="red";
+}
+
+
+function quatro(x){
+cells[x].style.backgroundColor="red";
+cells[x+1].style.backgroundColor="red";
+cells[x+9].style.backgroundColor="red";
+cells[x+10].style.backgroundColor="red"}
+
+
+function I(x){
+cells[x].style.backgroundColor="red";
+cells[x+9].style.backgroundColor="red";
+cells[x+18].style.backgroundColor="red";
+cells[x+27].style.backgroundColor="red";
+}
+
+
+function H(x){
+cells[x].style.backgroundColor="red";
+cells[x+9].style.backgroundColor="red";
+}
+
+
+</script>
+<style>
+td{
+width:40px;
+border:1px solid gray;
+}
+tr{
+height:30px;
+}
+table{
+border:1px solid gray;
+border-collapse:collapse;
+}
+.red{
+border:1px solid red;
+}
+.saveBtn{
+background-color:orange;
+}
+.hiden{
+display:none;
+}
+</style>
+  </body>
+</html>

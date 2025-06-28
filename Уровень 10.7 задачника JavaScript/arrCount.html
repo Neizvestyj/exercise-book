@@ -10,6 +10,9 @@ content="width=device-width, initial-scale=1.0">
   <body>
 <p id="p">
 Дана таблица. По клику на любую ячейку эта ячейка выделяется каким-то цветом, активируюясь. Сделайте так, чтобы в одном ряду таблицы можно было активировать не более 5-ти ячеек.
+<hr>
+
+Дана таблица. По клику на любую ячейку эта ячейка выделяется каким-то цветом, активируюясь. Сделайте так, чтобы в одной колонке таблицы можно было активировать не более 5-ти ячеек.
 </p>
 
 
@@ -42,23 +45,30 @@ container.appendChild(table);
 //let cells={...arr}
 
 let arrCount={};
+let arrCountColumn={};
 
 arr.forEach((cell,index)=>{
-
 const rowIndex=Math.floor(index/9);
+const columnIndex=index%9;
 
 cell.addEventListener("click",(event)=>{
 let Count=arrCount[rowIndex]||0;
-if(Count<5){
+let CountColumn=arrCountColumn[columnIndex]||0;
+
+if(Count<5&&CountColumn<5){
 event.target.style.backgroundColor="red";
-
-arrCount[rowIndex]=Count+1
+arrCount[rowIndex]=Count+1;
+arrCountColumn[columnIndex]=CountColumn+1
 }else{
-alert("В этом ряду можно активировать не более 5 ячеек")
-}
 
+
+alert("В этом ряду/колонке можно активировать не более 5 ячеек")
+}
 })
 })
+
+
+
 
 </script>
 <style>

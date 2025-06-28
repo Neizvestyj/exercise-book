@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">    
+  </head>
+  <body>
+<p id="p">Дана квадратная HTML таблица произвольного размера. По нажатию на кнопку транспонируйте ее, то есть завалите ее на бок. Посмотрим на примере. Пусть у нас есть вот такая таблица:
+
+
+После транспонирования она должна превратится в следующую:
+
+</p>
+<hr>
+<div class="container" id="container">
+</div>
+<button class="btn" id="btn">Click</button>
+
+<p id="result"></p>
+<script>
+let arr=[];
+
+const container=document.querySelector('.container');
+let
+table=document.createElement("table");
+
+for(let i=0;i<=3;i++){
+let tr=document.createElement("tr");
+for(let j=0;j<=3;j++){
+let td=document.createElement("td");
+arr.push(td)
+
+tr.appendChild(td);
+td.innerHTML=i*4+j+1
+}
+table.appendChild(tr)
+}
+container.appendChild(table);
+
+cells={...arr}
+
+document.getElementById("btn").addEventListener("click",()=>{
+let newArr=[];
+for(let i=0;i<4;i++){
+ for(let j=0;j<4;j++){
+newArr.push(arr[j * 4 + i].innerHTML);
+}
+}
+
+
+for(let i = 0; i < 16; i++) {
+  arr[i].innerHTML=newArr[i];
+    }
+});
+</script>
+<style>
+.blocked{
+pointer-events:none;
+}
+
+td{
+width:40px;
+border:1px solid gray;
+}
+tr{
+height:30px;
+}
+table{
+border:1px solid gray;
+border-collapse:collapse;
+}
+.red{
+border:1px solid red;
+}
+.saveBtn{
+background-color:orange;
+}
+.hiden{
+display:none;
+}
+
+
+</style>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style2.css">    
+  </head>
+  <body>
+<p id="Дана форма с инпутами, текстареа, чебоксами, радиокнопками и селектами. Юзер как-то изменяет элементы формы. Сделайте так, чтобы после перезагрузки окна браузера все элементы формы пришли в то состояние, в котором их оставил юзер.
+</p>
+
+
+<hr>
+<form action=# id="hamburger-form">
+<fieldset id="hamburger-fieldset">
+ <h3 id="hamburger-top">Составь свой бургер</h3>
+
+<fieldset class="hamburger-fieldset-inside">
+<h4>Выберите размер бургера</h4>
+
+<input type="radio"id="bigburger" name="size" value="Big" class="hamburger-input" data-price="100" data-calories="40" checked>
+<label for="bigburger">Большой 100рублей , 40 калорий</label>
+<hr>
+
+<input type="radio"id="smallburger" name="size" value="Small" class="hamburger-input" data-price="50" data-calories="20" checked>
+<label for="smallburger">Бургер мини 50 рублей , 20 калорий</label>
+</fieldset>
+
+<fieldset class="hamburger-fieldset-inside">
+<h4>Выберите доп начинку</h4>
+
+<input type="checkbox" checked id="seasoning" name="topings" value="Spices" class="hamburger-input" data-price="15" data-calories="0">
+<label for="seasoning">Посыпать приправой  +15 рублей, +0 калорий</label>
+<br>
+<input type="checkbox" checked id="mayonnaise" name="topings" value="Mayo" class="hamburger-input" data-price="20" data-calories="5">
+<label for="mayonnaise">Полить майонезом  +20 рублей, +5 калорий</label>
+</fieldset>
+
+<fieldset>
+<input id="input" type="text">
+<hr>
+<textarea id="textarea" type="text" class="input"></textarea>
+</fieldset>
+
+<fieldset>
+<select id="select">
+<option value="0">Java Script</option>
+<option value="1">Python</option>
+<option value="2">Java</option>
+</select>
+</fieldset>
+
+</form>
+<br>
+<script>
+
+
+
+
+
+
+
+
+let select=document.querySelector("select")
+let selectHistory=JSON.parse(localStorage.getItem("selectHistory"))||[];
+
+let options=Array.from(select.options)
+
+options.forEach((option,i)=>{
+option.selected=selectHistory[i]===true
+});
+
+
+select.addEventListener("change",()=>{
+selectHistory=options.map(option=>option.selected);
+
+localStorage.setItem("selectHistory",JSON.stringify(selectHistory))
+});
+
+
+let checks=document.querySelectorAll("input[type='checkbox']");
+let checkHistory=JSON.parse(localStorage.getItem("checkHistory"))||[];
+checks.forEach((check,i)=>{
+check.checked=checkHistory[i]===true
+});
+
+checks.forEach(check=>{
+check.addEventListener("change",()=>{
+checkHistory=Array.from(checks).map(c=>c.checked);
+
+localStorage.setItem("checkHistory",JSON.stringify(checkHistory))
+})
+});
+
+
+let radioButtons=document.querySelectorAll("input[name='size']");
+let radioHistory=JSON.parse(localStorage.getItem("radioHistory"))||[];
+
+radioButtons.forEach(radio=>{
+radio.checked=(radio.value===radioHistory[0])
+});
+radioButtons.forEach(radio=>{
+radio.addEventListener("input",(event)=>{
+
+localStorage.setItem("radioHistory",JSON.stringify([radio.value]))
+
+ })
+});
+
+
+let input=document.getElementById("input");
+let inputHistory=JSON.parse(localStorage.getItem("inputHistory"))||[];
+input.value=inputHistory; 
+input.addEventListener("keypress",(event)=>{
+if(event.key==="Enter"){
+inputHistory.push(input.value);
+localStorage.setItem("inputHistory",JSON.stringify(inputHistory))
+input.value="";
+ }
+});
+
+
+
+let textarea=document.getElementById("textarea");
+let textareaHistory=JSON.parse(localStorage.getItem("textareaHistory"))||[];
+textarea.value=textareaHistory.join("\n"); 
+textarea.addEventListener("keypress",(event)=>{
+if(event.key==="Enter"){
+textareaHistory.push(textarea.value);
+localStorage.setItem("textareaHistory",JSON.stringify(textareaHistory))
+textarea.value="";
+ }
+})
+
+
+
+
+</script>
+<style>
+
+
+</style>
+  </body>
+</html>
